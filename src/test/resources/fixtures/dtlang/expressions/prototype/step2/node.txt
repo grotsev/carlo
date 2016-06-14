@@ -1,49 +1,49 @@
  > create:
-+:2
-(1 <<<+>>> 2) * ((3) + 4)
+>:2
+date"2016-03-04"-today<<<>>>>5month
 
 
  > create:
-number:3
-(<<<1>>> + 2) * ((3) + 4)
+-:3
+date"2016-03-04"<<<->>>today>5month
 
 
  > create:
-number:4
-(1 + <<<2>>>) * ((3) + 4)
+date:4
+<<<date>>>"2016-03-04"-today>5month
 
 
  > create:
-+:5
-(1 + 2) * ((3) <<<+>>> 4)
+atom:5
+date<<<"2016-03-04">>>-today>5month
 
 
  > create:
-number:6
-(1 + 2) * ((<<<3>>>) + 4)
+atom:6
+date"2016-03-04"-<<<today>>>>5month
 
 
  > create:
-number:7
-(1 + 2) * ((3) + <<<4>>>)
+month:7
+date"2016-03-04"-today>5<<<month>>>
+
+
+ > create:
+atom:8
+date"2016-03-04"-today><<<5>>>month
 
 
  > merge:
-* 1 {
-  left: + 2 >> 1 {
-    left: number 3 >> 2 {
-      value: 1
+expression 1 {
+  result: > 2 >> 1 {
+    left: - 3 >> 2 {
+      left: date 4 >> 3 {
+        operand: atom 5 >> 4
+      }
+      right: atom 6 >> 3
     }
-    right: number 4 >> 2 {
-      value: 2
-    }
-  }
-  right: + 5 >> 1 {
-    left: number 6 >> 5 {
-      value: 3
-    }
-    right: number 7 >> 5 {
-      value: 4
+    right: month 7 >> 2 {
+      operand: atom 8 >> 7
     }
   }
 }

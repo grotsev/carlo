@@ -1,9 +1,7 @@
 package kz.greetgo.dtlang
 
 import name.lakhin.eliah.projects.papacarlo.lexis.{Contextualizer, Matcher, Token, Tokenizer}
-import name.lakhin.eliah.projects.papacarlo.syntax.Rule._
 import name.lakhin.eliah.projects.papacarlo.{Lexer, Syntax}
-import name.lakhin.eliah.projects.papacarlo.syntax.rules.NamedRule
 import name.lakhin.eliah.projects.papacarlo.syntax.{Expressions, Rule}
 
 /**
@@ -38,16 +36,6 @@ object DtLang {
       )
     )
 
-    tokenCategory("date",
-      sequence(
-        repeat(rangeOf('0', '9'), times = 4),
-        chunk("-"),
-        repeat(rangeOf('0', '9'), times = 2),
-        chunk("-"),
-        repeat(rangeOf('0', '9'), times = 2)
-      )
-    )
-
     tokenCategory("number",
       sequence(
         optional(chunk("-")),
@@ -74,7 +62,8 @@ object DtLang {
       "true", "false",
       "not", "and", "or",
       "min", "max", "round", "sizeof",
-      "null")
+      "today", "date", "year", "month", "day",
+      "case", "null")
 
     tokenizer
   }
@@ -101,6 +90,8 @@ object DtLang {
     import Rule._
     import Expressions._
 
+    // expr
+
     val expr: Rule = rule("expression").cachable.main {
       val rule =
         expression(branch("operand", recover(atom, "operand required")))
@@ -114,6 +105,14 @@ object DtLang {
       prefix(rule, "max", p)
       prefix(rule, "round", p)
       prefix(rule, "sizeof", p)
+
+      prefix(rule, "date", p)
+      prefix(rule, "year", p)
+      prefix(rule, "month", p)
+      prefix(rule, "day", p)
+      postfix(rule, "year", p)
+      postfix(rule, "month", p)
+      postfix(rule, "day", p)
 
       p += 1;
       infix(rule, "round", p)
@@ -159,12 +158,14 @@ object DtLang {
     val atom = rule("atom") {
       choice(
         token("string"),
-        token("date"),
         token("number"),
         choice(token("true"), token("false")),
+        token("today"),
         branch("path", path)
       )
     }
+
+    // path
 
     val path = rule("path") {
       oneOrMore(
@@ -192,6 +193,62 @@ object DtLang {
         recover(token("]"), "filter must end with ] sign")
       )
     }
+
+    // stmt
+
+    val stmt = rule("stmt") {
+      choice(seq, alt, loop, asn)
+    }
+
+    val seq: Rule = rule("seq") {
+      sequence(
+        token("{"),
+        zeroOrMore(
+          branch("stmt", stmt)
+        ),
+        recover(token("}"), "sequence must end with } sign")
+      )
+    }
+
+    val alt = rule("alt") {
+      sequence(
+        token("case"),
+        token("{"),
+        zeroOrMore(sequence(
+          branch("expr", expr),
+          token(":"),
+          branch("stmt", stmt)
+        )),
+        recover(token("}"), "sequence must end with } sign")
+      )
+    }
+
+    val loop = rule("loop") {
+      sequence(
+        path,
+        token(":"),
+        range,
+        branch("stmt", stmt)
+      )
+    }
+
+    val range = rule("range") {
+      choice(
+        // TODO 1 to 10, 1 until 10, path, numbered path
+      )
+    }
+
+    val asn = rule("asn") {
+      // TODO
+      sequence(
+        branch("path", path),
+        token(":="),
+        branch("expr", expr),
+        recover(token(";"), "assign must end with ; sign")
+      )
+    }
+
+    // TODO break, continue, call?
 
   }.syntax
 }

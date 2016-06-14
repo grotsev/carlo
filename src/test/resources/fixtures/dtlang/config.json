@@ -1,6 +1,6 @@
 {
     "expressions": {
-        "steps": 2,
+        "steps": 3,
         "independentSteps": true,
         "monitors": ["node", "error", "token"]
     },
