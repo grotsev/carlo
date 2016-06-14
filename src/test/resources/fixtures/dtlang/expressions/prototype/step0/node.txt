@@ -1,0 +1,109 @@
+ > create:
+and:2
+(1+2*3)/4 >= 5 <<<and>>> not (true or false)
+
+
+ > create:
+>=:3
+(1+2*3)/4 <<<>=>>> 5 and not (true or false)
+
+
+ > create:
+/:4
+(1+2*3)<<</>>>4 >= 5 and not (true or false)
+
+
+ > create:
++:5
+(1<<<+>>>2*3)/4 >= 5 and not (true or false)
+
+
+ > create:
+atom:6
+(<<<1>>>+2*3)/4 >= 5 and not (true or false)
+
+
+ > create:
+*:7
+(1+2<<<*>>>3)/4 >= 5 and not (true or false)
+
+
+ > create:
+atom:8
+(1+<<<2>>>*3)/4 >= 5 and not (true or false)
+
+
+ > create:
+atom:9
+(1+2*<<<3>>>)/4 >= 5 and not (true or false)
+
+
+ > create:
+atom:10
+(1+2*3)/<<<4>>> >= 5 and not (true or false)
+
+
+ > create:
+atom:11
+(1+2*3)/4 >= <<<5>>> and not (true or false)
+
+
+ > create:
+not:12
+(1+2*3)/4 >= 5 and <<<not>>> (true or false)
+
+
+ > create:
+or:13
+(1+2*3)/4 >= 5 and not (true <<<or>>> false)
+
+
+ > create:
+atom:14
+(1+2*3)/4 >= 5 and not (<<<true>>> or false)
+
+
+ > create:
+atom:15
+(1+2*3)/4 >= 5 and not (true or <<<false>>>)
+
+
+ > merge:
+expression 1 {
+  result: and 2 >> 1 {
+    left: >= 3 >> 2 {
+      left: / 4 >> 3 {
+        left: + 5 >> 4 {
+          left: atom 6 >> 5 {
+            value: 1
+          }
+          right: * 7 >> 5 {
+            left: atom 8 >> 7 {
+              value: 2
+            }
+            right: atom 9 >> 7 {
+              value: 3
+            }
+          }
+        }
+        right: atom 10 >> 4 {
+          value: 4
+        }
+      }
+      right: atom 11 >> 3 {
+        value: 5
+      }
+    }
+    right: not 12 >> 2 {
+      operand: or 13 >> 12 {
+        left: atom 14 >> 13 {
+          value: true
+        }
+        right: atom 15 >> 13 {
+          value: false
+        }
+      }
+    }
+  }
+}
+

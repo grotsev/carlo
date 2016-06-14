@@ -1,0 +1,1 @@
+(~0~number+number*number)/number >= number and not (true or false)

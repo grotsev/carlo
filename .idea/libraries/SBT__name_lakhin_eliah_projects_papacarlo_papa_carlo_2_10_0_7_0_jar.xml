@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="SBT: name.lakhin.eliah.projects.papacarlo:papa-carlo_2.10:0.7.0:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/name.lakhin.eliah.projects.papacarlo/papa-carlo_2.10/jars/papa-carlo_2.10-0.7.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/name.lakhin.eliah.projects.papacarlo/papa-carlo_2.10/srcs/papa-carlo_2.10-0.7.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
