@@ -1,1 +1,1 @@
-(~0~number+number*number)/number >= number and not (true or false)
+(~0~number+number*number)/number max number min number >= number round number and not (true or false)

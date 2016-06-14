@@ -1,1 +1,1 @@
-(1+2*3)/4 >= 5 and not (true or false)
+(1+2*3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true or false)

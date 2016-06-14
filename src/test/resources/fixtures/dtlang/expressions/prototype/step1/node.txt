@@ -1,131 +1,163 @@
  > create:
-+:2
-1 - -2 / 3 * +4 / 5 + 6 <<<+>>> 7% + 8
+:=:2
+client.surname <<<:=>>> "Mr." || in.surname[1][type:4] || (1+2*3)
 
 
  > create:
-+:3
-1 - -2 / 3 * +4 / 5 <<<+>>> 6 + 7% + 8
+atom:3
+<<<client.surname>>> := "Mr." || in.surname[1][type:4] || (1+2*3)
 
 
  > create:
--:4
-1 <<<->>> -2 / 3 * +4 / 5 + 6 + 7% + 8
+path:4
+<<<client.surname>>> := "Mr." || in.surname[1][type:4] || (1+2*3)
 
 
  > create:
-number:5
-<<<1>>> - -2 / 3 * +4 / 5 + 6 + 7% + 8
+segment:5
+<<<client>>>.surname := "Mr." || in.surname[1][type:4] || (1+2*3)
 
 
  > create:
-/:6
-1 - -2 <<</>>> 3 * +4 / 5 + 6 + 7% + 8
+segment:6
+client.<<<surname>>> := "Mr." || in.surname[1][type:4] || (1+2*3)
 
 
  > create:
--:7
-1 - <<<->>>2 / 3 * +4 / 5 + 6 + 7% + 8
+||:7
+client.surname := "Mr." || in.surname[1][type:4] <<<||>>> (1+2*3)
 
 
  > create:
-number:8
-1 - -<<<2>>> / 3 * +4 / 5 + 6 + 7% + 8
+||:8
+client.surname := "Mr." <<<||>>> in.surname[1][type:4] || (1+2*3)
 
 
  > create:
-/:9
-1 - -2 / 3 * +4 <<</>>> 5 + 6 + 7% + 8
+atom:9
+client.surname := <<<"Mr.">>> || in.surname[1][type:4] || (1+2*3)
 
 
  > create:
-*:10
-1 - -2 / 3 <<<*>>> +4 / 5 + 6 + 7% + 8
+atom:10
+client.surname := "Mr." || <<<in.surname[1][type:4]>>> || (1+2*3)
 
 
  > create:
-number:11
-1 - -2 / <<<3>>> * +4 / 5 + 6 + 7% + 8
+path:11
+client.surname := "Mr." || <<<in.surname[1][type:4]>>> || (1+2*3)
 
 
  > create:
-+:12
-1 - -2 / 3 * <<<+>>>4 / 5 + 6 + 7% + 8
+segment:12
+client.surname := "Mr." || <<<in>>>.surname[1][type:4] || (1+2*3)
 
 
  > create:
-number:13
-1 - -2 / 3 * +<<<4>>> / 5 + 6 + 7% + 8
+segment:13
+client.surname := "Mr." || in.<<<surname[1][type:4]>>> || (1+2*3)
 
 
  > create:
-number:14
-1 - -2 / 3 * +4 / <<<5>>> + 6 + 7% + 8
+index:14
+client.surname := "Mr." || in.surname<<<[1]>>>[type:4] || (1+2*3)
 
 
  > create:
-number:15
-1 - -2 / 3 * +4 / 5 + <<<6>>> + 7% + 8
+expression:15 cachable
+client.surname := "Mr." || in.surname[<<<1>>>][type:4] || (1+2*3)
 
 
  > create:
-%:16
-1 - -2 / 3 * +4 / 5 + 6 + 7<<<%>>> + 8
+atom:16
+client.surname := "Mr." || in.surname[<<<1>>>][type:4] || (1+2*3)
 
 
  > create:
-number:17
-1 - -2 / 3 * +4 / 5 + 6 + <<<7>>>% + 8
+index:17
+client.surname := "Mr." || in.surname[1]<<<[type:4]>>> || (1+2*3)
 
 
  > create:
-number:18
-1 - -2 / 3 * +4 / 5 + 6 + 7% + <<<8>>>
+expression:18 cachable
+client.surname := "Mr." || in.surname[1][type:<<<4>>>] || (1+2*3)
+
+
+ > create:
+atom:19
+client.surname := "Mr." || in.surname[1][type:<<<4>>>] || (1+2*3)
+
+
+ > create:
++:20
+client.surname := "Mr." || in.surname[1][type:4] || (1<<<+>>>2*3)
+
+
+ > create:
+atom:21
+client.surname := "Mr." || in.surname[1][type:4] || (<<<1>>>+2*3)
+
+
+ > create:
+*:22
+client.surname := "Mr." || in.surname[1][type:4] || (1+2<<<*>>>3)
+
+
+ > create:
+atom:23
+client.surname := "Mr." || in.surname[1][type:4] || (1+<<<2>>>*3)
+
+
+ > create:
+atom:24
+client.surname := "Mr." || in.surname[1][type:4] || (1+2*<<<3>>>)
 
 
  > merge:
-+ 1 {
-  left: + 2 >> 1 {
-    left: + 3 >> 2 {
-      left: - 4 >> 3 {
-        left: number 5 >> 4 {
-          value: 1
+expression 1 {
+  result: := 2 >> 1 {
+    left: atom 3 >> 2 {
+      path: path 4 >> 3 {
+        segment: segment 5 >> 4 {
+          attribute: client
         }
-        right: / 6 >> 4 {
-          left: - 7 >> 6 {
-            operand: number 8 >> 7 {
-              value: 2
+        segment: segment 6 >> 4 {
+          attribute: surname
+        }
+      }
+    }
+    right: || 7 >> 2 {
+      left: || 8 >> 7 {
+        left: atom 9 >> 8
+        right: atom 10 >> 8 {
+          path: path 11 >> 10 {
+            segment: segment 12 >> 11 {
+              attribute: in
             }
-          }
-          right: / 9 >> 6 {
-            left: * 10 >> 9 {
-              left: number 11 >> 10 {
-                value: 3
+            segment: segment 13 >> 11 {
+              attribute: surname
+              index: index 14 >> 13 {
+                filter: expression 15 cachable >> 14 {
+                  result: atom 16 >> 15
+                }
               }
-              right: + 12 >> 10 {
-                operand: number 13 >> 12 {
-                  value: 4
+              index: index 17 >> 13 {
+                filter: expression 18 cachable >> 17 {
+                  result: atom 19 >> 18
                 }
               }
             }
-            right: number 14 >> 9 {
-              value: 5
-            }
           }
         }
       }
-      right: number 15 >> 3 {
-        value: 6
+      right: + 20 >> 7 {
+        left: atom 21 >> 20
+        right: * 22 >> 20 {
+          left: atom 23 >> 22
+          right: atom 24 >> 22
+        }
       }
     }
-    right: % 16 >> 2 {
-      operand: number 17 >> 16 {
-        value: 7
-      }
-    }
-  }
-  right: number 18 >> 1 {
-    value: 8
   }
 }
 

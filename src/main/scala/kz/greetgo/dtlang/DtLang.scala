@@ -53,14 +53,9 @@ object DtLang {
         optional(chunk("-")),
         choice(
           chunk("0"),
-          sequence(rangeOf('1', '9'), zeroOrMore(rangeOf('0', '9')))
+          sequence(rangeOf('1', '9'), zeroOrMore(choice(rangeOf('0', '9'), chunk("_"))))
         ),
-        optional(sequence(chunk("."), oneOrMore(rangeOf('0', '9')))),
-        optional(sequence(
-          anyOf("eE"),
-          optional(anyOf("+-")),
-          oneOrMore(rangeOf('0', '9'))
-        ))
+        optional(sequence(chunk("."), oneOrMore(choice(rangeOf('0', '9'), chunk("_")))))
       )
     )
 
@@ -75,7 +70,11 @@ object DtLang {
       "+", "-", "*", "/", "%", "<=", "<", ">=", ">", "!=", "=", "||",
       "//", "/*", "*/")
 
-    keywords("true", "false", "not", "and", "or", "null")
+    keywords(
+      "true", "false",
+      "not", "and", "or",
+      "min", "max", "round", "sizeof",
+      "null")
 
     tokenizer
   }
@@ -111,27 +110,46 @@ object DtLang {
       prefix(rule, "+", p)
       prefix(rule, "-", p)
       prefix(rule, "not", p)
+      prefix(rule, "min", p)
+      prefix(rule, "max", p)
+      prefix(rule, "round", p)
+      prefix(rule, "sizeof", p)
+
+      p += 1;
+      infix(rule, "round", p)
+
       p += 1;
       infix(rule, "*", p)
       infix(rule, "/", p)
       infix(rule, "%", p)
+
       p += 1;
       infix(rule, "+", p)
       infix(rule, "-", p)
+
+      p += 1;
+      infix(rule, "min", p)
+      infix(rule, "max", p)
+
       p += 1;
       infix(rule, "||", p)
+
       p += 1;
       infix(rule, "<", p)
       infix(rule, ">", p)
       infix(rule, "<=", p)
       infix(rule, ">=", p)
+
       p += 1;
       infix(rule, "=", p)
       infix(rule, "!=", p)
+
       p += 1;
       infix(rule, "and", p)
+
       p += 1;
       infix(rule, "or", p)
+
       p += 1;
       infix(rule, ":=", p) // TODO move
 

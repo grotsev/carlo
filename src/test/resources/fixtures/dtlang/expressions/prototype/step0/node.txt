@@ -1,107 +1,132 @@
  > create:
 and:2
-(1+2*3)/4 >= 5 <<<and>>> not (true or false)
+(1+2*3)/4 max 0 min 10 >= 5.555_555__ round 1 <<<and>>> not (true or false)
 
 
  > create:
 >=:3
-(1+2*3)/4 <<<>=>>> 5 and not (true or false)
+(1+2*3)/4 max 0 min 10 <<<>=>>> 5.555_555__ round 1 and not (true or false)
 
 
  > create:
-/:4
-(1+2*3)<<</>>>4 >= 5 and not (true or false)
+min:4
+(1+2*3)/4 max 0 <<<min>>> 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
-+:5
-(1<<<+>>>2*3)/4 >= 5 and not (true or false)
+max:5
+(1+2*3)/4 <<<max>>> 0 min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
-atom:6
-(<<<1>>>+2*3)/4 >= 5 and not (true or false)
+/:6
+(1+2*3)<<</>>>4 max 0 min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
-*:7
-(1+2<<<*>>>3)/4 >= 5 and not (true or false)
++:7
+(1<<<+>>>2*3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
 atom:8
-(1+<<<2>>>*3)/4 >= 5 and not (true or false)
+(<<<1>>>+2*3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
-atom:9
-(1+2*<<<3>>>)/4 >= 5 and not (true or false)
+*:9
+(1+2<<<*>>>3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
 atom:10
-(1+2*3)/<<<4>>> >= 5 and not (true or false)
+(1+<<<2>>>*3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
 atom:11
-(1+2*3)/4 >= <<<5>>> and not (true or false)
+(1+2*<<<3>>>)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
-not:12
-(1+2*3)/4 >= 5 and <<<not>>> (true or false)
+atom:12
+(1+2*3)/<<<4>>> max 0 min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
-or:13
-(1+2*3)/4 >= 5 and not (true <<<or>>> false)
+atom:13
+(1+2*3)/4 max <<<0>>> min 10 >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
 atom:14
-(1+2*3)/4 >= 5 and not (<<<true>>> or false)
+(1+2*3)/4 max 0 min <<<10>>> >= 5.555_555__ round 1 and not (true or false)
 
 
  > create:
-atom:15
-(1+2*3)/4 >= 5 and not (true or <<<false>>>)
+round:15
+(1+2*3)/4 max 0 min 10 >= 5.555_555__ <<<round>>> 1 and not (true or false)
+
+
+ > create:
+atom:16
+(1+2*3)/4 max 0 min 10 >= <<<5.555_555__>>> round 1 and not (true or false)
+
+
+ > create:
+atom:17
+(1+2*3)/4 max 0 min 10 >= 5.555_555__ round <<<1>>> and not (true or false)
+
+
+ > create:
+not:18
+(1+2*3)/4 max 0 min 10 >= 5.555_555__ round 1 and <<<not>>> (true or false)
+
+
+ > create:
+or:19
+(1+2*3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true <<<or>>> false)
+
+
+ > create:
+atom:20
+(1+2*3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (<<<true>>> or false)
+
+
+ > create:
+atom:21
+(1+2*3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true or <<<false>>>)
 
 
  > merge:
 expression 1 {
   result: and 2 >> 1 {
     left: >= 3 >> 2 {
-      left: / 4 >> 3 {
-        left: + 5 >> 4 {
-          left: atom 6 >> 5 {
-            value: 1
-          }
-          right: * 7 >> 5 {
-            left: atom 8 >> 7 {
-              value: 2
+      left: min 4 >> 3 {
+        left: max 5 >> 4 {
+          left: / 6 >> 5 {
+            left: + 7 >> 6 {
+              left: atom 8 >> 7
+              right: * 9 >> 7 {
+                left: atom 10 >> 9
+                right: atom 11 >> 9
+              }
             }
-            right: atom 9 >> 7 {
-              value: 3
-            }
+            right: atom 12 >> 6
           }
+          right: atom 13 >> 5
         }
-        right: atom 10 >> 4 {
-          value: 4
-        }
+        right: atom 14 >> 4
       }
-      right: atom 11 >> 3 {
-        value: 5
+      right: round 15 >> 3 {
+        left: atom 16 >> 15
+        right: atom 17 >> 15
       }
     }
-    right: not 12 >> 2 {
-      operand: or 13 >> 12 {
-        left: atom 14 >> 13 {
-          value: true
-        }
-        right: atom 15 >> 13 {
-          value: false
-        }
+    right: not 18 >> 2 {
+      operand: or 19 >> 18 {
+        left: atom 20 >> 19
+        right: atom 21 >> 19
       }
     }
   }
