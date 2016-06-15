@@ -54,17 +54,13 @@ object DtLang {
       )
     )
 
-    terminals(";", ".", ",", ":=", ":", "{", "}", "[", "]", "(", ")",
-      "+", "-", "*", "/", "%", "<=", "<", ">=", ">", "!=", "=", "||",
-      "//", "/*", "*/")
-
-    keywords(
-      "true", "false",
-      "not", "and", "or",
-      "min", "max", "round", "sizeof",
-      "today", "date", "year", "month", "day",
-      "case", "continue", "break", "return", "call",
-      "to", "until", "numbered", "null"
+    terminals(
+      ";", ".", ",", ":=", ":",
+      "{", "}", "[", "]", "(", ")", // TODO remove {}
+      "+", "-", "*", "/", "%",
+      "<=", "<", ">=", ">", "!=", "=",
+      "||", "|", "&", "!", "~", "#", "^", // TODO remove "~", "#", "^"
+      "//", "/*", "*/"
     )
 
     tokenizer
@@ -76,6 +72,7 @@ object DtLang {
     import contextualizer._
 
     trackContext("[", "]").allowCaching
+    trackContext("(", ")").allowCaching
     trackContext("{", "}").allowCaching
     trackContext("//", Token.LineBreakKind).forceSkip.topContext
     trackContext("/*", "*/").forceSkip.topContext
@@ -92,32 +89,15 @@ object DtLang {
     import Rule._
     import Expressions._
 
-    // expr
-
-    val expr: Rule = rule("expr") {
+    val expr: Rule = rule("expr").cachable.main {
       val rule =
-        expression(branch("operand", recover(atom, "operand required")))
+        expression(branch("operand", atom))
 
       var p = 1
       group(rule, "(", ")")
       prefix(rule, "+", p)
       prefix(rule, "-", p)
-      prefix(rule, "not", p)
-      prefix(rule, "min", p)
-      prefix(rule, "max", p)
-      prefix(rule, "round", p)
-      prefix(rule, "sizeof", p)
-
-      prefix(rule, "date", p)
-      prefix(rule, "year", p)
-      prefix(rule, "month", p)
-      prefix(rule, "day", p)
-      postfix(rule, "year", p)
-      postfix(rule, "month", p)
-      postfix(rule, "day", p)
-
-      p += 1
-      infix(rule, "round", p)
+      prefix(rule, "!", p)
 
       p += 1
       infix(rule, "*", p)
@@ -129,11 +109,10 @@ object DtLang {
       infix(rule, "-", p)
 
       p += 1
-      infix(rule, "min", p)
-      infix(rule, "max", p)
-
-      p += 1
-      infix(rule, "||", p)
+      infix(rule, "||", p) // TODO just one
+      infix(rule, "~", p)
+      infix(rule, "#", p)
+      infix(rule, "^", p)
 
       p += 1
       infix(rule, "<", p)
@@ -146,10 +125,10 @@ object DtLang {
       infix(rule, "!=", p)
 
       p += 1
-      infix(rule, "and", p)
+      infix(rule, "&", p)
 
       p += 1
-      infix(rule, "or", p)
+      infix(rule, "|", p)
 
       rule
     }
@@ -158,7 +137,7 @@ object DtLang {
       sequence(
         token("["),
         optional(sequence(
-          branch("field", token("name")),
+          branch("field", token("name")), // TODO capture token anywhere
           token(":")
         )),
         branch("filter", expr),
@@ -168,7 +147,7 @@ object DtLang {
 
     val segment = rule("segment") {
       sequence(
-        capture("attribute", token("name")),
+        capture("name", token("name")),
         branch("index", zeroOrMore(index))
       )
     }
@@ -181,124 +160,27 @@ object DtLang {
       )
     }
 
+    val fun = rule("fun") {
+      sequence(
+        token("name"),
+        token("{"),
+        sequence(
+          zeroOrMore(
+            branch("expr", expr),
+            separator =
+              recover(token(","), "function arguments must be separated with , sign")
+          ),
+          recover(token("}"), "function call must end with } sign")
+        )
+      )
+    }
+
     val atom = rule("atom") {
       choice(
         token("string"),
         token("number"),
-        choice(token("true"), token("false")),
-        token("today"),
+        branch("fun", fun),
         branch("path", path)
-      )
-    }
-
-    // stmt
-
-    //noinspection ForwardReference
-    val stmt: Rule = rule("stmt") {
-      choice(
-        branch("seq", seq),
-        branch("alt", alt),
-        branch("loop", loop),
-        branch("asn", asn),
-        branch("cnt", cnt),
-        branch("brk", brk),
-        branch("ret", ret),
-        branch("call", call)
-      )
-    }
-
-    val seq: Rule = rule("seq") {
-      sequence(
-        token("{"),
-        zeroOrMore(
-          branch("stmt", stmt)
-        ),
-        recover(token("}"), "sequence must end with } sign")
-      )
-    }
-
-    val alt = rule("alt") {
-      sequence(
-        token("case"),
-        token("{"),
-        zeroOrMore(sequence(
-          branch("expr", expr),
-          token(":"),
-          branch("stmt", stmt)
-        )),
-        recover(token("}"), "sequence must end with } sign")
-      )
-    }
-
-    val range = rule("range") {
-      choice(
-        sequence(
-          expr,
-          token("to"),
-          expr
-        ),
-        sequence(
-          expr,
-          token("until"),
-          expr
-        ),
-        sequence(
-          token("numbered"),
-          path
-        ),
-        path
-      )
-    }
-
-    val loop = rule("loop") {
-      sequence(
-        token("name"),
-        token(":"),
-        range,
-        branch("stmt", stmt)
-      )
-    }
-
-    val asn = rule("asn") {
-      sequence(
-        branch("path", path),
-        token(":="),
-        branch("expr", expr),
-        recover(token(";"), "assign must end with ; sign")
-      )
-    }
-
-    val cnt = rule("cnt") {
-      sequence(
-        token("continue"),
-        optional(token("name"))
-      )
-    }
-
-    val brk = rule("brk") {
-      sequence(
-        token("break"),
-        optional(token("name"))
-      )
-    }
-
-    val ret = rule("ret") {
-      token("return")
-    }
-
-    val call = rule("call") {
-      sequence(
-        token("call"),
-        token("name")
-      )
-    }
-
-    // main
-
-    val main = rule("main").cachable.main {
-      choice(
-        branch("stmt", stmt),
-        branch("expr", expr)
       )
     }
 

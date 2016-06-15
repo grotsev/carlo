@@ -1,1 +1,29 @@
-(1+2*3)/4 max 0 min 10 >= 5.555_555__ round 1 and not (true or false)
+seq {
+  let {x, 5},
+  let {y[5][type:in.y], 7},
+  let {client.surname, "Mr."~in.surname[1][type:4]~1+2*3},
+  switch {
+    case {
+      123+5 =124,
+      seq {
+        return {},
+        break {}
+      }
+    },
+    case {22+size{x} = 0, continue{}},
+    case {true,
+      for {i, 1, 50,
+        seq {
+          let {x, x+1},
+          switch {
+            case {x>10, continue {i}},
+            case {x<0, call {doIt}}
+          }
+        }
+      }
+    }
+  },
+  let {y,
+    min{max{(1+2*3)/4, 0}, 10} >= round{5.555_555__, 1} & ! (true {} | false {})
+  }
+}

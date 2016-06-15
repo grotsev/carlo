@@ -1,1 +1,1 @@
-date"2016-03-04"-today>5month
+date("2016-03-04")-today()>month(5)
