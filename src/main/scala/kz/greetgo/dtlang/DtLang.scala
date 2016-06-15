@@ -94,13 +94,6 @@ object DtLang {
 
     // expr
 
-    val main = rule("main").cachable.main {
-      choice(
-        branch("stmt", stmt),
-        branch("expr", expr)
-      )
-    }
-
     val expr: Rule = rule("expr") {
       val rule =
         expression(branch("operand", recover(atom, "operand required")))
@@ -123,69 +116,42 @@ object DtLang {
       postfix(rule, "month", p)
       postfix(rule, "day", p)
 
-      p += 1;
+      p += 1
       infix(rule, "round", p)
 
-      p += 1;
+      p += 1
       infix(rule, "*", p)
       infix(rule, "/", p)
       infix(rule, "%", p)
 
-      p += 1;
+      p += 1
       infix(rule, "+", p)
       infix(rule, "-", p)
 
-      p += 1;
+      p += 1
       infix(rule, "min", p)
       infix(rule, "max", p)
 
-      p += 1;
+      p += 1
       infix(rule, "||", p)
 
-      p += 1;
+      p += 1
       infix(rule, "<", p)
       infix(rule, ">", p)
       infix(rule, "<=", p)
       infix(rule, ">=", p)
 
-      p += 1;
+      p += 1
       infix(rule, "=", p)
       infix(rule, "!=", p)
 
-      p += 1;
+      p += 1
       infix(rule, "and", p)
 
-      p += 1;
+      p += 1
       infix(rule, "or", p)
 
       rule
-    }
-
-    val atom = rule("atom") {
-      choice(
-        token("string"),
-        token("number"),
-        choice(token("true"), token("false")),
-        token("today"),
-        branch("path", path)
-      )
-    }
-
-    // path
-
-    val path = rule("path") {
-      oneOrMore(
-        branch("segment", segment),
-        separator =
-          recover(token("."), "path entries must be separated with . sign")
-      )
-    }
-
-    val segment = rule("segment") {
-      sequence(
-        capture("attribute", token("name")),
-        branch("index", zeroOrMore(index))
-      )
     }
 
     val index = rule("index") {
@@ -200,8 +166,34 @@ object DtLang {
       )
     }
 
+    val segment = rule("segment") {
+      sequence(
+        capture("attribute", token("name")),
+        branch("index", zeroOrMore(index))
+      )
+    }
+
+    val path = rule("path") {
+      oneOrMore(
+        branch("segment", segment),
+        separator =
+          recover(token("."), "path entries must be separated with . sign")
+      )
+    }
+
+    val atom = rule("atom") {
+      choice(
+        token("string"),
+        token("number"),
+        choice(token("true"), token("false")),
+        token("today"),
+        branch("path", path)
+      )
+    }
+
     // stmt
 
+    //noinspection ForwardReference
     val stmt: Rule = rule("stmt") {
       choice(
         branch("seq", seq),
@@ -238,15 +230,6 @@ object DtLang {
       )
     }
 
-    val loop = rule("loop") {
-      sequence(
-        token("name"),
-        token(":"),
-        range,
-        branch("stmt", stmt)
-      )
-    }
-
     val range = rule("range") {
       choice(
         sequence(
@@ -264,6 +247,15 @@ object DtLang {
           path
         ),
         path
+      )
+    }
+
+    val loop = rule("loop") {
+      sequence(
+        token("name"),
+        token(":"),
+        range,
+        branch("stmt", stmt)
       )
     }
 
@@ -298,6 +290,15 @@ object DtLang {
       sequence(
         token("call"),
         token("name")
+      )
+    }
+
+    // main
+
+    val main = rule("main").cachable.main {
+      choice(
+        branch("stmt", stmt),
+        branch("expr", expr)
       )
     }
 
