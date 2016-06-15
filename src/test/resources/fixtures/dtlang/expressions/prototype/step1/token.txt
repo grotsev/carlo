@@ -1,1 +1,1 @@
-name~0~.name := string || name.name[~1:0~number][name:number] ~0~|| (number+number*number)
+name~0~.name := string || name.name[~1:0~number][name:number] ~0~|| (number+number*number);

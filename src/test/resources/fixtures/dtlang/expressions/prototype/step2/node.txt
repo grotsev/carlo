@@ -34,8 +34,8 @@ date"2016-03-04"-today><<<5>>>month
 
 
  > merge:
-expression 1 {
-  result: > 2 >> 1 {
+main 1 {
+  expr: > 2 >> 1 {
     left: - 3 >> 2 {
       left: date 4 >> 3 {
         operand: atom 5 >> 4

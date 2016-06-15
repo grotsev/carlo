@@ -1,1 +1,1 @@
-client.surname := "Mr." || in.surname[1][type:4] || (1+2*3)
+client.surname := "Mr." || in.surname[1][type:4] || (1+2*3);

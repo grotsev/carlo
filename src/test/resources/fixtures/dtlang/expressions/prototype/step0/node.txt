@@ -99,8 +99,8 @@ atom:21
 
 
  > merge:
-expression 1 {
-  result: and 2 >> 1 {
+main 1 {
+  expr: and 2 >> 1 {
     left: >= 3 >> 2 {
       left: min 4 >> 3 {
         left: max 5 >> 4 {

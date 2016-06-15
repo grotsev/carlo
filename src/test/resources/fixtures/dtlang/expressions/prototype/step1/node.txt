@@ -1,160 +1,146 @@
  > create:
-:=:2
-client.surname <<<:=>>> "Mr." || in.surname[1][type:4] || (1+2*3)
+stmt:2
+<<<client.surname := "Mr." || in.surname[1][type:4] || (1+2*3);>>>
 
 
  > create:
-atom:3
-<<<client.surname>>> := "Mr." || in.surname[1][type:4] || (1+2*3)
+asn:3
+<<<client.surname := "Mr." || in.surname[1][type:4] || (1+2*3);>>>
 
 
  > create:
-path:4
-<<<client.surname>>> := "Mr." || in.surname[1][type:4] || (1+2*3)
+||:4
+client.surname := "Mr." || in.surname[1][type:4] <<<||>>> (1+2*3);
 
 
  > create:
-segment:5
-<<<client>>>.surname := "Mr." || in.surname[1][type:4] || (1+2*3)
+||:5
+client.surname := "Mr." <<<||>>> in.surname[1][type:4] || (1+2*3);
 
 
  > create:
-segment:6
-client.<<<surname>>> := "Mr." || in.surname[1][type:4] || (1+2*3)
+atom:6
+client.surname := <<<"Mr.">>> || in.surname[1][type:4] || (1+2*3);
 
 
  > create:
-||:7
-client.surname := "Mr." || in.surname[1][type:4] <<<||>>> (1+2*3)
+atom:7
+client.surname := "Mr." || <<<in.surname[1][type:4]>>> || (1+2*3);
 
 
  > create:
-||:8
-client.surname := "Mr." <<<||>>> in.surname[1][type:4] || (1+2*3)
+path:8
+client.surname := "Mr." || <<<in.surname[1][type:4]>>> || (1+2*3);
 
 
  > create:
-atom:9
-client.surname := <<<"Mr.">>> || in.surname[1][type:4] || (1+2*3)
+segment:9
+client.surname := "Mr." || <<<in>>>.surname[1][type:4] || (1+2*3);
 
 
  > create:
-atom:10
-client.surname := "Mr." || <<<in.surname[1][type:4]>>> || (1+2*3)
+segment:10
+client.surname := "Mr." || in.<<<surname[1][type:4]>>> || (1+2*3);
 
 
  > create:
-path:11
-client.surname := "Mr." || <<<in.surname[1][type:4]>>> || (1+2*3)
+index:11
+client.surname := "Mr." || in.surname<<<[1]>>>[type:4] || (1+2*3);
 
 
  > create:
-segment:12
-client.surname := "Mr." || <<<in>>>.surname[1][type:4] || (1+2*3)
+atom:12
+client.surname := "Mr." || in.surname[<<<1>>>][type:4] || (1+2*3);
 
 
  > create:
-segment:13
-client.surname := "Mr." || in.<<<surname[1][type:4]>>> || (1+2*3)
+index:13
+client.surname := "Mr." || in.surname[1]<<<[type:4]>>> || (1+2*3);
 
 
  > create:
-index:14
-client.surname := "Mr." || in.surname<<<[1]>>>[type:4] || (1+2*3)
+atom:14
+client.surname := "Mr." || in.surname[1][type:<<<4>>>] || (1+2*3);
 
 
  > create:
-expression:15 cachable
-client.surname := "Mr." || in.surname[<<<1>>>][type:4] || (1+2*3)
++:15
+client.surname := "Mr." || in.surname[1][type:4] || (1<<<+>>>2*3);
 
 
  > create:
 atom:16
-client.surname := "Mr." || in.surname[<<<1>>>][type:4] || (1+2*3)
+client.surname := "Mr." || in.surname[1][type:4] || (<<<1>>>+2*3);
 
 
  > create:
-index:17
-client.surname := "Mr." || in.surname[1]<<<[type:4]>>> || (1+2*3)
+*:17
+client.surname := "Mr." || in.surname[1][type:4] || (1+2<<<*>>>3);
 
 
  > create:
-expression:18 cachable
-client.surname := "Mr." || in.surname[1][type:<<<4>>>] || (1+2*3)
+atom:18
+client.surname := "Mr." || in.surname[1][type:4] || (1+<<<2>>>*3);
 
 
  > create:
 atom:19
-client.surname := "Mr." || in.surname[1][type:<<<4>>>] || (1+2*3)
+client.surname := "Mr." || in.surname[1][type:4] || (1+2*<<<3>>>);
 
 
  > create:
-+:20
-client.surname := "Mr." || in.surname[1][type:4] || (1<<<+>>>2*3)
+path:20
+<<<client.surname>>> := "Mr." || in.surname[1][type:4] || (1+2*3);
 
 
  > create:
-atom:21
-client.surname := "Mr." || in.surname[1][type:4] || (<<<1>>>+2*3)
+segment:21
+<<<client>>>.surname := "Mr." || in.surname[1][type:4] || (1+2*3);
 
 
  > create:
-*:22
-client.surname := "Mr." || in.surname[1][type:4] || (1+2<<<*>>>3)
-
-
- > create:
-atom:23
-client.surname := "Mr." || in.surname[1][type:4] || (1+<<<2>>>*3)
-
-
- > create:
-atom:24
-client.surname := "Mr." || in.surname[1][type:4] || (1+2*<<<3>>>)
+segment:22
+client.<<<surname>>> := "Mr." || in.surname[1][type:4] || (1+2*3);
 
 
  > merge:
-expression 1 {
-  result: := 2 >> 1 {
-    left: atom 3 >> 2 {
-      path: path 4 >> 3 {
-        segment: segment 5 >> 4 {
-          attribute: client
-        }
-        segment: segment 6 >> 4 {
-          attribute: surname
-        }
-      }
-    }
-    right: || 7 >> 2 {
-      left: || 8 >> 7 {
-        left: atom 9 >> 8
-        right: atom 10 >> 8 {
-          path: path 11 >> 10 {
-            segment: segment 12 >> 11 {
-              attribute: in
-            }
-            segment: segment 13 >> 11 {
-              attribute: surname
-              index: index 14 >> 13 {
-                filter: expression 15 cachable >> 14 {
-                  result: atom 16 >> 15
-                }
+main 1 {
+  stmt: stmt 2 >> 1 {
+    asn: asn 3 >> 2 {
+      expr: || 4 >> 3 {
+        left: || 5 >> 4 {
+          left: atom 6 >> 5
+          right: atom 7 >> 5 {
+            path: path 8 >> 7 {
+              segment: segment 9 >> 8 {
+                attribute: in
               }
-              index: index 17 >> 13 {
-                filter: expression 18 cachable >> 17 {
-                  result: atom 19 >> 18
+              segment: segment 10 >> 8 {
+                attribute: surname
+                index: index 11 >> 10 {
+                  filter: atom 12 >> 11
+                }
+                index: index 13 >> 10 {
+                  filter: atom 14 >> 13
                 }
               }
             }
           }
         }
+        right: + 15 >> 4 {
+          left: atom 16 >> 15
+          right: * 17 >> 15 {
+            left: atom 18 >> 17
+            right: atom 19 >> 17
+          }
+        }
       }
-      right: + 20 >> 7 {
-        left: atom 21 >> 20
-        right: * 22 >> 20 {
-          left: atom 23 >> 22
-          right: atom 24 >> 22
+      path: path 20 >> 3 {
+        segment: segment 21 >> 20 {
+          attribute: client
+        }
+        segment: segment 22 >> 20 {
+          attribute: surname
         }
       }
     }

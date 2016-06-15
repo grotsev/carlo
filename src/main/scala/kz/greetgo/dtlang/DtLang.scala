@@ -54,7 +54,7 @@ object DtLang {
       )
     )
 
-    terminals(".", ",", ":=", ":", "{", "}", "[", "]", "(", ")",
+    terminals(";", ".", ",", ":=", ":", "{", "}", "[", "]", "(", ")",
       "+", "-", "*", "/", "%", "<=", "<", ">=", ">", "!=", "=", "||",
       "//", "/*", "*/")
 
@@ -63,7 +63,9 @@ object DtLang {
       "not", "and", "or",
       "min", "max", "round", "sizeof",
       "today", "date", "year", "month", "day",
-      "case", "null")
+      "case", "continue", "break", "return", "call",
+      "to", "until", "numbered", "null"
+    )
 
     tokenizer
   }
@@ -92,7 +94,14 @@ object DtLang {
 
     // expr
 
-    val expr: Rule = rule("expression").cachable.main {
+    val main = rule("main").cachable.main {
+      choice(
+        branch("stmt", stmt),
+        branch("expr", expr)
+      )
+    }
+
+    val expr: Rule = rule("expr") {
       val rule =
         expression(branch("operand", recover(atom, "operand required")))
 
@@ -149,9 +158,6 @@ object DtLang {
       p += 1;
       infix(rule, "or", p)
 
-      p += 1;
-      infix(rule, ":=", p) // TODO move
-
       rule
     }
 
@@ -196,8 +202,17 @@ object DtLang {
 
     // stmt
 
-    val stmt = rule("stmt") {
-      choice(seq, alt, loop, asn)
+    val stmt: Rule = rule("stmt") {
+      choice(
+        branch("seq", seq),
+        branch("alt", alt),
+        branch("loop", loop),
+        branch("asn", asn),
+        branch("cnt", cnt),
+        branch("brk", brk),
+        branch("ret", ret),
+        branch("call", call)
+      )
     }
 
     val seq: Rule = rule("seq") {
@@ -225,7 +240,7 @@ object DtLang {
 
     val loop = rule("loop") {
       sequence(
-        path,
+        token("name"),
         token(":"),
         range,
         branch("stmt", stmt)
@@ -234,12 +249,25 @@ object DtLang {
 
     val range = rule("range") {
       choice(
-        // TODO 1 to 10, 1 until 10, path, numbered path
+        sequence(
+          expr,
+          token("to"),
+          expr
+        ),
+        sequence(
+          expr,
+          token("until"),
+          expr
+        ),
+        sequence(
+          token("numbered"),
+          path
+        ),
+        path
       )
     }
 
     val asn = rule("asn") {
-      // TODO
       sequence(
         branch("path", path),
         token(":="),
@@ -248,7 +276,30 @@ object DtLang {
       )
     }
 
-    // TODO break, continue, call?
+    val cnt = rule("cnt") {
+      sequence(
+        token("continue"),
+        optional(token("name"))
+      )
+    }
+
+    val brk = rule("brk") {
+      sequence(
+        token("break"),
+        optional(token("name"))
+      )
+    }
+
+    val ret = rule("ret") {
+      token("return")
+    }
+
+    val call = rule("call") {
+      sequence(
+        token("call"),
+        token("name")
+      )
+    }
 
   }.syntax
 }
