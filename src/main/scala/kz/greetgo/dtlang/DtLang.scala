@@ -73,7 +73,7 @@ object DtLang {
 
     trackContext("[", "]").allowCaching
     trackContext("(", ")").allowCaching
-    trackContext("{", "}").allowCaching
+    //trackContext("{", "}").allowCaching
     trackContext("//", Token.LineBreakKind).forceSkip.topContext
     trackContext("/*", "*/").forceSkip.topContext
 
@@ -90,8 +90,7 @@ object DtLang {
     import Expressions._
 
     val expr: Rule = rule("expr").cachable.main {
-      val rule =
-        expression(branch("operand", atom))
+      val rule = expression(branch("operand", atom))
 
       var p = 1
       group(rule, "(", ")")
@@ -163,15 +162,13 @@ object DtLang {
     val fun = rule("fun") {
       sequence(
         token("name"),
-        token("{"),
-        sequence(
-          zeroOrMore(
-            branch("expr", expr),
-            separator =
-              recover(token(","), "function arguments must be separated with , sign")
-          ),
-          recover(token("}"), "function call must end with } sign")
-        )
+        token("("),
+        zeroOrMore(
+          branch("expr", expr),
+          separator =
+            recover(token(","), "function arguments must be separated with , sign")
+        ),
+        recover(token(")"), "function call must end with ) sign")
       )
     }
 

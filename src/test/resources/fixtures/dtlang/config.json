@@ -5,8 +5,8 @@
         "monitors": ["node", "error", "token"]
     },
     "recovery": {
-        "steps": 0,
+        "steps": 3,
         "independentSteps": true,
-        "monitors": ["node", "error", "token"]
+        "monitors": ["error"]
     }
 }

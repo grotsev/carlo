@@ -1,2 +1,2 @@
- > operand required:
+ > atom expected:
 1 * <<<>>>* 3
