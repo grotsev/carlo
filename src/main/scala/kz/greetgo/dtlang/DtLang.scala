@@ -56,10 +56,10 @@ object DtLang {
 
     terminals(
       ";", ".", ",", ":=", ":",
-      "{", "}", "[", "]", "(", ")", // TODO remove {}
+      "[", "]", "(", ")",
       "+", "-", "*", "/", "%",
       "<=", "<", ">=", ">", "!=", "=",
-      "||", "|", "&", "!", "~", "#", "^", // TODO remove "~", "#", "^"
+      "|", "&", "!", "~",
       "//", "/*", "*/"
     )
 
@@ -73,7 +73,6 @@ object DtLang {
 
     trackContext("[", "]").allowCaching
     trackContext("(", ")").allowCaching
-    //trackContext("{", "}").allowCaching
     trackContext("//", Token.LineBreakKind).forceSkip.topContext
     trackContext("/*", "*/").forceSkip.topContext
 
@@ -108,10 +107,7 @@ object DtLang {
       infix(rule, "-", p)
 
       p += 1
-      infix(rule, "||", p) // TODO just one
       infix(rule, "~", p)
-      infix(rule, "#", p)
-      infix(rule, "^", p)
 
       p += 1
       infix(rule, "<", p)
