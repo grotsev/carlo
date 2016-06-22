@@ -24,12 +24,14 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.10.6:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scalatest:scalatest_2.10:2.0.M6-SNAP8:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scalap:2.10.0:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.10.6:jar" level="project" />
-    <orderEntry type="library" name="SBT: org.scala-lang:scala-compiler:2.10.6:jar" level="project" />
-    <orderEntry type="library" name="SBT: net.liftweb:lift-json_2.10:2.5-RC6:jar" level="project" />
-    <orderEntry type="library" name="SBT: name.lakhin.eliah.projects.papacarlo:papa-carlo_2.10:0.7.0:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scala-js:scalajs-test-interface_2.10:0.6.10:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-js:scalajs-library_2.10:0.6.10:jar" level="project" />
     <orderEntry type="library" name="SBT: com.thoughtworks.paranamer:paranamer:2.4.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: name.lakhin.eliah.projects.papacarlo:papa-carlo_2.10:0.7.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: net.liftweb:lift-json_2.10:2.5-RC6:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-compiler:2.10.6:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.10.6:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scalap:2.10.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalatest:scalatest_2.10:2.0.M6-SNAP8:jar" level="project" />
   </component>
 </module>

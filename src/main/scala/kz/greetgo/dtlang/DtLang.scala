@@ -1,18 +1,19 @@
 package kz.greetgo.dtlang
 
 import name.lakhin.eliah.projects.papacarlo.lexis.{Contextualizer, Matcher, Token, Tokenizer}
-import name.lakhin.eliah.projects.papacarlo.{Lexer, Syntax}
 import name.lakhin.eliah.projects.papacarlo.syntax.{Expressions, Rule}
+import name.lakhin.eliah.projects.papacarlo.{Lexer, Syntax}
 
 /**
   * Created by den on 09.06.16.
   */
+
 object DtLang {
   private def tokenizer = {
     val tokenizer = new Tokenizer()
 
-    import tokenizer._
     import Matcher._
+    import tokenizer._
 
     tokenCategory("whitespace",
       oneOrMore(anyOf(" \t\f\n"))
@@ -84,9 +85,9 @@ object DtLang {
   def syntax(lexer: Lexer) = new {
     val syntax = new Syntax(lexer)
 
-    import syntax._
-    import Rule._
     import Expressions._
+    import Rule._
+    import syntax._
 
     val expr: Rule = rule("expr").cachable.main {
       val rule = expression(branch("operand", atom))
@@ -178,4 +179,5 @@ object DtLang {
     }
 
   }.syntax
+
 }

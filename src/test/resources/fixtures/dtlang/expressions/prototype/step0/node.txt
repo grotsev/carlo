@@ -3,9 +3,7 @@ atom:2
 <<<seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -39,9 +37,7 @@ fun:3
 <<<seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -75,15 +71,15 @@ expr:4 cachable
 seq (
   <<<let (x, 5)>>>,
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -91,15 +87,15 @@ atom:5
 seq (
   <<<let (x, 5)>>>,
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -107,15 +103,15 @@ fun:6
 seq (
   <<<let (x, 5)>>>,
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -123,15 +119,15 @@ expr:7 cachable
 seq (
   let (<<<x>>>, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -139,15 +135,15 @@ atom:8
 seq (
   let (<<<x>>>, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -155,15 +151,15 @@ path:9
 seq (
   let (<<<x>>>, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -171,15 +167,15 @@ segment:10
 seq (
   let (<<<x>>>, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -187,15 +183,15 @@ expr:11 cachable
 seq (
   let (x, <<<5>>>),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -203,15 +199,15 @@ atom:12
 seq (
   let (x, <<<5>>>),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
+      )
+    ),
 13...
 
  > create:
@@ -219,9 +215,7 @@ expr:13 cachable
 seq (
   let (x, 5),
   <<<let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4)>>>,
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -229,6 +223,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -236,9 +232,7 @@ atom:14
 seq (
   let (x, 5),
   <<<let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4)>>>,
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -246,6 +240,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -253,9 +249,7 @@ fun:15
 seq (
   let (x, 5),
   <<<let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4)>>>,
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -263,6 +257,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -270,9 +266,7 @@ expr:16 cachable
 seq (
   let (x, 5),
   let (<<<client.account[type:in.account[1].type][1].sum>>>, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -280,6 +274,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -287,9 +283,7 @@ atom:17
 seq (
   let (x, 5),
   let (<<<client.account[type:in.account[1].type][1].sum>>>, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -297,6 +291,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -304,9 +300,7 @@ path:18
 seq (
   let (x, 5),
   let (<<<client.account[type:in.account[1].type][1].sum>>>, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -314,6 +308,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -321,9 +317,7 @@ segment:19
 seq (
   let (x, 5),
   let (<<<client>>>.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -331,6 +325,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -338,9 +334,7 @@ segment:20
 seq (
   let (x, 5),
   let (client.<<<account[type:in.account[1].type][1]>>>.sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -348,6 +342,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -355,9 +351,7 @@ index:21
 seq (
   let (x, 5),
   let (client.account<<<[type:in.account[1].type]>>>[1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -365,6 +359,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -372,9 +368,7 @@ expr:22 cachable
 seq (
   let (x, 5),
   let (client.account[type:<<<in.account[1].type>>>][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -382,6 +376,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -389,9 +385,7 @@ atom:23
 seq (
   let (x, 5),
   let (client.account[type:<<<in.account[1].type>>>][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -399,6 +393,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -406,9 +402,7 @@ path:24
 seq (
   let (x, 5),
   let (client.account[type:<<<in.account[1].type>>>][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -416,6 +410,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -423,9 +419,7 @@ segment:25
 seq (
   let (x, 5),
   let (client.account[type:<<<in>>>.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -433,6 +427,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -440,9 +436,7 @@ segment:26
 seq (
   let (x, 5),
   let (client.account[type:in.<<<account[1]>>>.type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -450,6 +444,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -457,9 +453,7 @@ index:27
 seq (
   let (x, 5),
   let (client.account[type:in.account<<<[1]>>>.type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -467,6 +461,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -474,9 +470,7 @@ expr:28 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[<<<1>>>].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -484,6 +478,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -491,9 +487,7 @@ atom:29
 seq (
   let (x, 5),
   let (client.account[type:in.account[<<<1>>>].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -501,6 +495,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -508,9 +504,7 @@ segment:30
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].<<<type>>>][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -518,6 +512,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -525,9 +521,7 @@ index:31
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type]<<<[1]>>>.sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -535,6 +529,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -542,9 +538,7 @@ expr:32 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][<<<1>>>].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -552,6 +546,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -559,9 +555,7 @@ atom:33
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][<<<1>>>].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -569,6 +563,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -576,9 +572,7 @@ segment:34
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].<<<sum>>>, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -586,6 +580,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -593,9 +589,7 @@ expr:35 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, <<<in.sum+100_0001 + 1+ 2*3%4>>>),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -603,6 +597,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -610,9 +606,7 @@ seq (
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1<<<+>>> 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -620,6 +614,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -627,9 +623,7 @@ seq (
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 <<<+>>> 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -637,6 +631,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -644,9 +640,7 @@ seq (
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum<<<+>>>100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -654,6 +648,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -661,9 +657,7 @@ atom:39
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, <<<in.sum>>>+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -671,6 +665,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -678,9 +674,7 @@ path:40
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, <<<in.sum>>>+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -688,6 +682,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -695,9 +691,7 @@ segment:41
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, <<<in>>>.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -705,6 +699,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -712,9 +708,7 @@ segment:42
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.<<<sum>>>+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -722,6 +716,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -729,9 +725,7 @@ atom:43
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+<<<100_0001>>> + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -739,6 +733,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -746,9 +742,7 @@ atom:44
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + <<<1>>>+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -756,6 +750,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -763,9 +759,7 @@ seq (
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3<<<%>>>4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -773,6 +767,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -780,9 +776,7 @@ seq (
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2<<<*>>>3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -790,6 +784,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -797,9 +793,7 @@ atom:47
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ <<<2>>>*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -807,6 +801,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -814,9 +810,7 @@ atom:48
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*<<<3>>>%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -824,6 +818,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -831,9 +827,7 @@ atom:49
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%<<<4>>>),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -841,6 +835,8 @@ seq (
         return (),
         break ()
       )
+    ),
+    case (22+size(x) = 0, continue()),
 14...
 
  > create:
@@ -848,9 +844,7 @@ expr:50 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  <<<let (client.surname, "Mr."||in.surname||1+2*3%4)>>>, /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  <<<let (client.surname, "Mr."~in.surname~1+2*3%4)>>>,  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -859,6 +853,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -866,9 +862,7 @@ atom:51
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  <<<let (client.surname, "Mr."||in.surname||1+2*3%4)>>>, /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  <<<let (client.surname, "Mr."~in.surname~1+2*3%4)>>>,  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -877,6 +871,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -884,9 +880,7 @@ fun:52
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  <<<let (client.surname, "Mr."||in.surname||1+2*3%4)>>>, /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  <<<let (client.surname, "Mr."~in.surname~1+2*3%4)>>>,  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -895,6 +889,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -902,9 +898,7 @@ expr:53 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (<<<client.surname>>>, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (<<<client.surname>>>, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -913,6 +907,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -920,9 +916,7 @@ atom:54
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (<<<client.surname>>>, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (<<<client.surname>>>, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -931,6 +925,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -938,9 +934,7 @@ path:55
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (<<<client.surname>>>, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (<<<client.surname>>>, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -949,6 +943,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -956,9 +952,7 @@ segment:56
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (<<<client>>>.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (<<<client>>>.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -967,6 +961,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -974,9 +970,7 @@ segment:57
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.<<<surname>>>, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.<<<surname>>>, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -985,6 +979,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -992,9 +988,7 @@ expr:58 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, <<<"Mr."||in.surname||1+2*3%4>>>), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, <<<"Mr."~in.surname~1+2*3%4>>>),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1003,16 +997,16 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
-||:59
+~:59
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname<<<||>>>1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname<<<~>>>1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1021,16 +1015,16 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
-||:60
+~:60
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."<<<||>>>in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."<<<~>>>in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1039,6 +1033,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1046,9 +1042,7 @@ atom:61
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, <<<"Mr.">>>||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, <<<"Mr.">>>~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1057,6 +1051,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1064,9 +1060,7 @@ atom:62
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||<<<in.surname>>>||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~<<<in.surname>>>~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1075,6 +1069,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1082,9 +1078,7 @@ path:63
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||<<<in.surname>>>||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~<<<in.surname>>>~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1093,6 +1087,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1100,9 +1096,7 @@ segment:64
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||<<<in>>>.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~<<<in>>>.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1111,6 +1105,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1118,9 +1114,7 @@ segment:65
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.<<<surname>>>||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.<<<surname>>>~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1129,6 +1123,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1136,9 +1132,7 @@ seq (
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1<<<+>>>2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1<<<+>>>2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1147,6 +1141,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1154,9 +1150,7 @@ atom:67
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||<<<1>>>+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~<<<1>>>+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1165,6 +1159,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1172,9 +1168,7 @@ seq (
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3<<<%>>>4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3<<<%>>>4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1183,6 +1177,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1190,9 +1186,7 @@ seq (
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2<<<*>>>3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2<<<*>>>3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1201,6 +1195,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1208,9 +1204,7 @@ atom:70
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+<<<2>>>*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+<<<2>>>*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1219,6 +1213,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1226,9 +1222,7 @@ atom:71
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*<<<3>>>%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*<<<3>>>%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1237,6 +1231,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1244,9 +1240,7 @@ atom:72
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%<<<4>>>), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%<<<4>>>),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -1255,6 +1249,8 @@ seq (
         break ()
       )
     ),
+    case (22+size(x) = 0, continue()),
+    case (true,
 15...
 
  > create:
@@ -1262,10 +1258,8 @@ expr:73 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  <<<let (client.surname, "Mr."~in.surname~1+2*3%4)>>>,  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
+  <<<switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
@@ -1274,17 +1268,32 @@ seq (
       )
     ),
     case (22+size(x) = 0, continue()),
-16...
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+        )
+      )
+    )
+  )>>>,
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
 
  > create:
 atom:74
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  <<<let (client.surname, "Mr."~in.surname~1+2*3%4)>>>,  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
+  <<<switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
@@ -1293,17 +1302,32 @@ seq (
       )
     ),
     case (22+size(x) = 0, continue()),
-16...
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+        )
+      )
+    )
+  )>>>,
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
 
  > create:
 fun:75
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  <<<let (client.surname, "Mr."~in.surname~1+2*3%4)>>>,  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
+  <<<switch (
     case (
       date("2016-03-04")-today()>month(5),
       seq (
@@ -1312,964 +1336,57 @@ seq (
       )
     ),
     case (22+size(x) = 0, continue()),
-16...
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+        )
+      )
+    )
+  )>>>,
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
 
  > create:
 expr:76 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (<<<client.surname>>>, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
-    case (
+    <<<case (
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
         break ()
       )
-    ),
+    )>>>,
     case (22+size(x) = 0, continue()),
-16...
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+        )
+23...
 
  > create:
 atom:77
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (<<<client.surname>>>, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-path:78
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (<<<client.surname>>>, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-segment:79
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (<<<client>>>.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-segment:80
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.<<<surname>>>, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-expr:81 cachable
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, <<<"Mr."~in.surname~1+2*3%4>>>),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-~:82
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname<<<~>>>1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-~:83
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."<<<~>>>in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-atom:84
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, <<<"Mr.">>>~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-atom:85
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~<<<in.surname>>>~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-path:86
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~<<<in.surname>>>~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-segment:87
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~<<<in>>>.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-segment:88
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.<<<surname>>>~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-+:89
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1<<<+>>>2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-atom:90
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~<<<1>>>+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-%:91
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3<<<%>>>4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-*:92
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2<<<*>>>3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-atom:93
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+<<<2>>>*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-atom:94
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*<<<3>>>%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-atom:95
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%<<<4>>>),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-16...
-
- > create:
-expr:96 cachable
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  <<<let (client.surname, "Mr."^in.surname^1+2*3%4)>>>,
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-atom:97
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  <<<let (client.surname, "Mr."^in.surname^1+2*3%4)>>>,
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-fun:98
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  <<<let (client.surname, "Mr."^in.surname^1+2*3%4)>>>,
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-expr:99 cachable
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (<<<client.surname>>>, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-atom:100
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (<<<client.surname>>>, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-path:101
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (<<<client.surname>>>, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-segment:102
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (<<<client>>>.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-segment:103
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.<<<surname>>>, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-expr:104 cachable
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, <<<"Mr."^in.surname^1+2*3%4>>>),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-^:105
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname<<<^>>>1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-^:106
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."<<<^>>>in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-atom:107
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, <<<"Mr.">>>^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-atom:108
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^<<<in.surname>>>^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-path:109
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^<<<in.surname>>>^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-segment:110
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^<<<in>>>.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-segment:111
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.<<<surname>>>^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-+:112
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1<<<+>>>2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-atom:113
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^<<<1>>>+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-%:114
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3<<<%>>>4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-*:115
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2<<<*>>>3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-atom:116
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+<<<2>>>*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-atom:117
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*<<<3>>>%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-atom:118
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%<<<4>>>),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-17...
-
- > create:
-expr:119 cachable
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  <<<switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-        )
-      )
-    )
-  )>>>,
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-atom:120
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  <<<switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-        )
-      )
-    )
-  )>>>,
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-fun:121
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  <<<switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-        )
-      )
-    )
-  )>>>,
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-expr:122 cachable
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     <<<case (
       date("2016-03-04")-today()>month(5),
@@ -2288,16 +1405,14 @@ seq (
             case (x<0, call (doIt))
           )
         )
-25...
+23...
 
  > create:
-atom:123
+fun:78
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     <<<case (
       date("2016-03-04")-today()>month(5),
@@ -2316,44 +1431,14 @@ seq (
             case (x<0, call (doIt))
           )
         )
-25...
+23...
 
  > create:
-fun:124
+expr:79 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    <<<case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    )>>>,
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-        )
-25...
-
- > create:
-expr:125 cachable
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       <<<date("2016-03-04")-today()>month(5)>>>,
@@ -2367,16 +1452,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
->:126
+>:80
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()<<<>>>>month(5),
@@ -2390,16 +1473,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
--:127
+-:81
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")<<<->>>today()>month(5),
@@ -2413,16 +1494,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-atom:128
+atom:82
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       <<<date("2016-03-04")>>>-today()>month(5),
@@ -2436,16 +1515,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-fun:129
+fun:83
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       <<<date("2016-03-04")>>>-today()>month(5),
@@ -2459,16 +1536,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-expr:130 cachable
+expr:84 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date(<<<"2016-03-04">>>)-today()>month(5),
@@ -2482,16 +1557,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-atom:131
+atom:85
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date(<<<"2016-03-04">>>)-today()>month(5),
@@ -2505,16 +1578,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-atom:132
+atom:86
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-<<<today()>>>>month(5),
@@ -2528,16 +1599,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-fun:133
+fun:87
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-<<<today()>>>>month(5),
@@ -2551,16 +1620,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-atom:134
+atom:88
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()><<<month(5)>>>,
@@ -2574,16 +1641,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-fun:135
+fun:89
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()><<<month(5)>>>,
@@ -2597,16 +1662,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-expr:136 cachable
+expr:90 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(<<<5>>>),
@@ -2620,16 +1683,14 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
-20...
+18...
 
  > create:
-atom:137
+atom:91
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(<<<5>>>),
@@ -2643,97 +1704,112 @@ seq (
       for (i, 1, 50,
         seq (
           let (x, x+1),
+18...
+
+ > create:
+expr:92 cachable
+seq (
+  let (x, 5),
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
+  switch (
+    case (
+      date("2016-03-04")-today()>month(5),
+      <<<seq (
+        return (),
+        break ()
+      )>>>
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+22...
+
+ > create:
+atom:93
+seq (
+  let (x, 5),
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
+  switch (
+    case (
+      date("2016-03-04")-today()>month(5),
+      <<<seq (
+        return (),
+        break ()
+      )>>>
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+22...
+
+ > create:
+fun:94
+seq (
+  let (x, 5),
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
+  switch (
+    case (
+      date("2016-03-04")-today()>month(5),
+      <<<seq (
+        return (),
+        break ()
+      )>>>
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+22...
+
+ > create:
+expr:95 cachable
+seq (
+  let (x, 5),
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
+  switch (
+    case (
+      date("2016-03-04")-today()>month(5),
+      seq (
+        <<<return ()>>>,
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
 20...
 
  > create:
-expr:138 cachable
+atom:96
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      <<<seq (
-        return (),
-        break ()
-      )>>>
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-24...
-
- > create:
-atom:139
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      <<<seq (
-        return (),
-        break ()
-      )>>>
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-24...
-
- > create:
-fun:140
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      <<<seq (
-        return (),
-        break ()
-      )>>>
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-24...
-
- > create:
-expr:141 cachable
-seq (
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2749,16 +1825,14 @@ seq (
           let (x, x+1),
           switch (
             case (x>10, continue (i)),
-22...
+20...
 
  > create:
-atom:142
+fun:97
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2774,41 +1848,14 @@ seq (
           let (x, x+1),
           switch (
             case (x>10, continue (i)),
-22...
+20...
 
  > create:
-fun:143
+expr:98 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
-  switch (
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        <<<return ()>>>,
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-22...
-
- > create:
-expr:144 cachable
-...1
-  let (x, 5),
-  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2825,16 +1872,14 @@ expr:144 cachable
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
-23...
+21...
 
  > create:
-atom:145
-...1
+atom:99
+seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2851,16 +1896,14 @@ atom:145
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
-23...
+21...
 
  > create:
-fun:146
-...1
+fun:100
+seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-  let (client.surname, "Mr."||in.surname||1+2*3%4), /* choose one variant of concatenation */
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2877,13 +1920,13 @@ fun:146
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
-23...
+21...
 
  > create:
-expr:147 cachable
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+expr:101 cachable
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2903,13 +1946,13 @@ expr:147 cachable
           )
         )
       )
-26...
+24...
 
  > create:
-atom:148
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+atom:102
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2929,13 +1972,13 @@ atom:148
           )
         )
       )
-26...
+24...
 
  > create:
-fun:149
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+fun:103
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2955,13 +1998,13 @@ fun:149
           )
         )
       )
-26...
+24...
 
  > create:
-expr:150 cachable
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+expr:104 cachable
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -2981,13 +2024,13 @@ expr:150 cachable
           )
         )
       )
-26...
+24...
 
  > create:
-=:151
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+=:105
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3007,13 +2050,13 @@ expr:150 cachable
           )
         )
       )
-26...
+24...
 
  > create:
-+:152
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
++:106
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3033,13 +2076,13 @@ expr:150 cachable
           )
         )
       )
-26...
+24...
 
  > create:
-atom:153
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+atom:107
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3059,13 +2102,13 @@ atom:153
           )
         )
       )
-26...
+24...
 
  > create:
-atom:154
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+atom:108
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3085,13 +2128,13 @@ atom:154
           )
         )
       )
-26...
+24...
 
  > create:
-fun:155
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+fun:109
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3111,13 +2154,13 @@ fun:155
           )
         )
       )
-26...
+24...
 
  > create:
-expr:156 cachable
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+expr:110 cachable
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3137,13 +2180,13 @@ expr:156 cachable
           )
         )
       )
-26...
+24...
 
  > create:
-atom:157
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+atom:111
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3163,13 +2206,13 @@ atom:157
           )
         )
       )
-26...
+24...
 
  > create:
-path:158
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+path:112
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3189,13 +2232,13 @@ path:158
           )
         )
       )
-26...
+24...
 
  > create:
-segment:159
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+segment:113
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3215,13 +2258,13 @@ segment:159
           )
         )
       )
-26...
+24...
 
  > create:
-atom:160
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+atom:114
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3241,13 +2284,13 @@ atom:160
           )
         )
       )
-26...
+24...
 
  > create:
-expr:161 cachable
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+expr:115 cachable
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3267,13 +2310,13 @@ expr:161 cachable
           )
         )
       )
-26...
+24...
 
  > create:
-atom:162
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+atom:116
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3293,13 +2336,13 @@ atom:162
           )
         )
       )
-26...
+24...
 
  > create:
-fun:163
-...4
-  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ # ^
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+fun:117
+...2
+  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3319,12 +2362,12 @@ fun:163
           )
         )
       )
-26...
+24...
 
  > create:
-expr:164 cachable
-...5
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+expr:118 cachable
+...3
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3354,9 +2397,9 @@ expr:164 cachable
 
 
  > create:
-atom:165
-...5
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+atom:119
+...3
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3386,9 +2429,9 @@ atom:165
 
 
  > create:
-fun:166
-...5
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+fun:120
+...3
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3418,9 +2461,9 @@ fun:166
 
 
  > create:
-expr:167 cachable
-...5
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+expr:121 cachable
+...3
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3441,12 +2484,12 @@ expr:167 cachable
         )
       )
     )
-27...
+25...
 
  > create:
-atom:168
-...5
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+atom:122
+...3
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3467,12 +2510,12 @@ atom:168
         )
       )
     )
-27...
+25...
 
  > create:
-path:169
-...5
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+path:123
+...3
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3493,12 +2536,12 @@ path:169
         )
       )
     )
-27...
+25...
 
  > create:
-segment:170
-...5
-  let (client.surname, "Mr."^in.surname^1+2*3%4),
+segment:124
+...3
+  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3519,11 +2562,11 @@ segment:170
         )
       )
     )
-27...
+25...
 
  > create:
-expr:171 cachable
-...6
+expr:125 cachable
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3553,8 +2596,8 @@ expr:171 cachable
 
 
  > create:
-atom:172
-...6
+atom:126
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3584,8 +2627,8 @@ atom:172
 
 
  > create:
-fun:173
-...6
+fun:127
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3615,8 +2658,8 @@ fun:173
 
 
  > create:
-expr:174 cachable
-...6
+expr:128 cachable
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3638,11 +2681,11 @@ expr:174 cachable
       )
     )
   ),
-28...
+26...
 
  > create:
-atom:175
-...6
+atom:129
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3664,11 +2707,11 @@ atom:175
       )
     )
   ),
-28...
+26...
 
  > create:
-path:176
-...6
+path:130
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3690,11 +2733,11 @@ path:176
       )
     )
   ),
-28...
+26...
 
  > create:
-segment:177
-...6
+segment:131
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3716,11 +2759,11 @@ segment:177
       )
     )
   ),
-28...
+26...
 
  > create:
-expr:178 cachable
-...6
+expr:132 cachable
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3742,11 +2785,11 @@ expr:178 cachable
       )
     )
   ),
-28...
+26...
 
  > create:
-atom:179
-...6
+atom:133
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3768,11 +2811,11 @@ atom:179
       )
     )
   ),
-28...
+26...
 
  > create:
-expr:180 cachable
-...6
+expr:134 cachable
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3794,11 +2837,11 @@ expr:180 cachable
       )
     )
   ),
-28...
+26...
 
  > create:
-atom:181
-...6
+atom:135
+...4
   switch (
     case (
       date("2016-03-04")-today()>month(5),
@@ -3820,101 +2863,127 @@ atom:181
       )
     )
   ),
+26...
+
+ > create:
+expr:136 cachable
+...5
+    case (
+      date("2016-03-04")-today()>month(5),
+      seq (
+        return (),
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        <<<seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+        )>>>
+      )
+    )
+  ),
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
+
+ > create:
+atom:137
+...5
+    case (
+      date("2016-03-04")-today()>month(5),
+      seq (
+        return (),
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        <<<seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+        )>>>
+      )
+    )
+  ),
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
+
+ > create:
+fun:138
+...5
+    case (
+      date("2016-03-04")-today()>month(5),
+      seq (
+        return (),
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        <<<seq (
+          let (x, x+1),
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+        )>>>
+      )
+    )
+  ),
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
+
+ > create:
+expr:139 cachable
+...6
+      date("2016-03-04")-today()>month(5),
+      seq (
+        return (),
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          <<<let (x, x+1)>>>,
+          switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )
+        )
+      )
+    )
+  ),
+  let (
+    y,
 28...
 
  > create:
-expr:182 cachable
-...7
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        <<<seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-        )>>>
-      )
-    )
-  ),
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-atom:183
-...7
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        <<<seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-        )>>>
-      )
-    )
-  ),
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-fun:184
-...7
-    case (
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        <<<seq (
-          let (x, x+1),
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-        )>>>
-      )
-    )
-  ),
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-expr:185 cachable
-...8
+atom:140
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -3936,11 +3005,11 @@ expr:185 cachable
   ),
   let (
     y,
-30...
+28...
 
  > create:
-atom:186
-...8
+fun:141
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -3962,37 +3031,11 @@ atom:186
   ),
   let (
     y,
-30...
+28...
 
  > create:
-fun:187
-...8
-      date("2016-03-04")-today()>month(5),
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          <<<let (x, x+1)>>>,
-          switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )
-        )
-      )
-    )
-  ),
-  let (
-    y,
-30...
-
- > create:
-expr:188 cachable
-...8
+expr:142 cachable
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4014,11 +3057,11 @@ expr:188 cachable
   ),
   let (
     y,
-30...
+28...
 
  > create:
-atom:189
-...8
+atom:143
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4040,11 +3083,11 @@ atom:189
   ),
   let (
     y,
-30...
+28...
 
  > create:
-path:190
-...8
+path:144
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4066,11 +3109,11 @@ path:190
   ),
   let (
     y,
-30...
+28...
 
  > create:
-segment:191
-...8
+segment:145
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4092,11 +3135,11 @@ segment:191
   ),
   let (
     y,
-30...
+28...
 
  > create:
-expr:192 cachable
-...8
+expr:146 cachable
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4118,11 +3161,11 @@ expr:192 cachable
   ),
   let (
     y,
-30...
+28...
 
  > create:
-+:193
-...8
++:147
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4144,11 +3187,11 @@ expr:192 cachable
   ),
   let (
     y,
-30...
+28...
 
  > create:
-atom:194
-...8
+atom:148
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4170,11 +3213,11 @@ atom:194
   ),
   let (
     y,
-30...
+28...
 
  > create:
-path:195
-...8
+path:149
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4196,11 +3239,11 @@ path:195
   ),
   let (
     y,
-30...
+28...
 
  > create:
-segment:196
-...8
+segment:150
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4222,11 +3265,11 @@ segment:196
   ),
   let (
     y,
-30...
+28...
 
  > create:
-atom:197
-...8
+atom:151
+...6
       date("2016-03-04")-today()>month(5),
       seq (
         return (),
@@ -4248,95 +3291,121 @@ atom:197
   ),
   let (
     y,
+28...
+
+ > create:
+expr:152 cachable
+...7
+      seq (
+        return (),
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          <<<switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )>>>
+        )
+      )
+    )
+  ),
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
+
+ > create:
+atom:153
+...7
+      seq (
+        return (),
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          <<<switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )>>>
+        )
+      )
+    )
+  ),
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
+
+ > create:
+fun:154
+...7
+      seq (
+        return (),
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          <<<switch (
+            case (x>10, continue (i)),
+            case (x<0, call (doIt))
+          )>>>
+        )
+      )
+    )
+  ),
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
+)
+
+
+ > create:
+expr:155 cachable
+...8
+        return (),
+        break ()
+      )
+    ),
+    case (22+size(x) = 0, continue()),
+    case (true,
+      for (i, 1, 50,
+        seq (
+          let (x, x+1),
+          switch (
+            <<<case (x>10, continue (i))>>>,
+            case (x<0, call (doIt))
+          )
+        )
+      )
+    )
+  ),
+  let (
+    y,
+    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+  )
 30...
 
  > create:
-expr:198 cachable
-...9
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          <<<switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )>>>
-        )
-      )
-    )
-  ),
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-atom:199
-...9
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          <<<switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )>>>
-        )
-      )
-    )
-  ),
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-fun:200
-...9
-      seq (
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          <<<switch (
-            case (x>10, continue (i)),
-            case (x<0, call (doIt))
-          )>>>
-        )
-      )
-    )
-  ),
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-)
-
-
- > create:
-expr:201 cachable
-...10
+atom:156
+...8
         return (),
         break ()
       )
@@ -4358,11 +3427,11 @@ expr:201 cachable
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-atom:202
-...10
+fun:157
+...8
         return (),
         break ()
       )
@@ -4384,37 +3453,11 @@ atom:202
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-fun:203
-...10
-        return (),
-        break ()
-      )
-    ),
-    case (22+size(x) = 0, continue()),
-    case (true,
-      for (i, 1, 50,
-        seq (
-          let (x, x+1),
-          switch (
-            <<<case (x>10, continue (i))>>>,
-            case (x<0, call (doIt))
-          )
-        )
-      )
-    )
-  ),
-  let (
-    y,
-    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-  )
-32...
-
- > create:
-expr:204 cachable
-...10
+expr:158 cachable
+...8
         return (),
         break ()
       )
@@ -4436,11 +3479,11 @@ expr:204 cachable
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
->:205
-...10
+>:159
+...8
         return (),
         break ()
       )
@@ -4462,11 +3505,11 @@ expr:204 cachable
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-atom:206
-...10
+atom:160
+...8
         return (),
         break ()
       )
@@ -4488,11 +3531,11 @@ atom:206
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-path:207
-...10
+path:161
+...8
         return (),
         break ()
       )
@@ -4514,11 +3557,11 @@ path:207
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-segment:208
-...10
+segment:162
+...8
         return (),
         break ()
       )
@@ -4540,11 +3583,11 @@ segment:208
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-atom:209
-...10
+atom:163
+...8
         return (),
         break ()
       )
@@ -4566,11 +3609,11 @@ atom:209
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-expr:210 cachable
-...10
+expr:164 cachable
+...8
         return (),
         break ()
       )
@@ -4592,11 +3635,11 @@ expr:210 cachable
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-atom:211
-...10
+atom:165
+...8
         return (),
         break ()
       )
@@ -4618,11 +3661,11 @@ atom:211
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-fun:212
-...10
+fun:166
+...8
         return (),
         break ()
       )
@@ -4644,11 +3687,11 @@ fun:212
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-expr:213 cachable
-...10
+expr:167 cachable
+...8
         return (),
         break ()
       )
@@ -4670,11 +3713,11 @@ expr:213 cachable
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-atom:214
-...10
+atom:168
+...8
         return (),
         break ()
       )
@@ -4696,11 +3739,11 @@ atom:214
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-path:215
-...10
+path:169
+...8
         return (),
         break ()
       )
@@ -4722,11 +3765,11 @@ path:215
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-segment:216
-...10
+segment:170
+...8
         return (),
         break ()
       )
@@ -4748,11 +3791,11 @@ segment:216
     y,
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
-32...
+30...
 
  > create:
-expr:217 cachable
-...11
+expr:171 cachable
+...9
         break ()
       )
     ),
@@ -4774,11 +3817,11 @@ expr:217 cachable
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-atom:218
-...11
+atom:172
+...9
         break ()
       )
     ),
@@ -4800,11 +3843,11 @@ atom:218
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-fun:219
-...11
+fun:173
+...9
         break ()
       )
     ),
@@ -4826,11 +3869,11 @@ fun:219
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-expr:220 cachable
-...11
+expr:174 cachable
+...9
         break ()
       )
     ),
@@ -4852,11 +3895,11 @@ expr:220 cachable
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-<:221
-...11
+<:175
+...9
         break ()
       )
     ),
@@ -4878,11 +3921,11 @@ expr:220 cachable
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-atom:222
-...11
+atom:176
+...9
         break ()
       )
     ),
@@ -4904,11 +3947,11 @@ atom:222
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-path:223
-...11
+path:177
+...9
         break ()
       )
     ),
@@ -4930,11 +3973,11 @@ path:223
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-segment:224
-...11
+segment:178
+...9
         break ()
       )
     ),
@@ -4956,11 +3999,11 @@ segment:224
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-atom:225
-...11
+atom:179
+...9
         break ()
       )
     ),
@@ -4982,11 +4025,11 @@ atom:225
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-expr:226 cachable
-...11
+expr:180 cachable
+...9
         break ()
       )
     ),
@@ -5008,11 +4051,11 @@ expr:226 cachable
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-atom:227
-...11
+atom:181
+...9
         break ()
       )
     ),
@@ -5034,11 +4077,11 @@ atom:227
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-fun:228
-...11
+fun:182
+...9
         break ()
       )
     ),
@@ -5060,11 +4103,11 @@ fun:228
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-expr:229 cachable
-...11
+expr:183 cachable
+...9
         break ()
       )
     ),
@@ -5086,11 +4129,11 @@ expr:229 cachable
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-atom:230
-...11
+atom:184
+...9
         break ()
       )
     ),
@@ -5112,11 +4155,11 @@ atom:230
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-path:231
-...11
+path:185
+...9
         break ()
       )
     ),
@@ -5138,11 +4181,11 @@ path:231
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-segment:232
-...11
+segment:186
+...9
         break ()
       )
     ),
@@ -5164,11 +4207,11 @@ segment:232
     min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
   )
 )
-33...
+31...
 
  > create:
-expr:233 cachable
-...17
+expr:187 cachable
+...15
         seq (
           let (x, x+1),
           switch (
@@ -5187,8 +4230,8 @@ expr:233 cachable
 
 
  > create:
-atom:234
-...17
+atom:188
+...15
         seq (
           let (x, x+1),
           switch (
@@ -5207,8 +4250,8 @@ atom:234
 
 
  > create:
-fun:235
-...17
+fun:189
+...15
         seq (
           let (x, x+1),
           switch (
@@ -5227,8 +4270,8 @@ fun:235
 
 
  > create:
-expr:236 cachable
-...18
+expr:190 cachable
+...16
           let (x, x+1),
           switch (
             case (x>10, continue (i)),
@@ -5246,8 +4289,8 @@ expr:236 cachable
 
 
  > create:
-atom:237
-...18
+atom:191
+...16
           let (x, x+1),
           switch (
             case (x>10, continue (i)),
@@ -5265,8 +4308,8 @@ atom:237
 
 
  > create:
-path:238
-...18
+path:192
+...16
           let (x, x+1),
           switch (
             case (x>10, continue (i)),
@@ -5284,8 +4327,8 @@ path:238
 
 
  > create:
-segment:239
-...18
+segment:193
+...16
           let (x, x+1),
           switch (
             case (x>10, continue (i)),
@@ -5303,8 +4346,8 @@ segment:239
 
 
  > create:
-expr:240 cachable
-...19
+expr:194 cachable
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5321,8 +4364,8 @@ expr:240 cachable
 
 
  > create:
-&:241
-...19
+&:195
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5339,8 +4382,8 @@ expr:240 cachable
 
 
  > create:
->=:242
-...19
+>=:196
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5357,8 +4400,8 @@ expr:240 cachable
 
 
  > create:
-atom:243
-...19
+atom:197
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5375,8 +4418,8 @@ atom:243
 
 
  > create:
-fun:244
-...19
+fun:198
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5393,8 +4436,8 @@ fun:244
 
 
  > create:
-expr:245 cachable
-...19
+expr:199 cachable
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5411,8 +4454,8 @@ expr:245 cachable
 
 
  > create:
-atom:246
-...19
+atom:200
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5429,8 +4472,8 @@ atom:246
 
 
  > create:
-fun:247
-...19
+fun:201
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5447,8 +4490,8 @@ fun:247
 
 
  > create:
-expr:248 cachable
-...19
+expr:202 cachable
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5465,8 +4508,8 @@ expr:248 cachable
 
 
  > create:
-/:249
-...19
+/:203
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5483,8 +4526,8 @@ expr:248 cachable
 
 
  > create:
-+:250
-...19
++:204
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5501,8 +4544,8 @@ expr:248 cachable
 
 
  > create:
-atom:251
-...19
+atom:205
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5519,8 +4562,8 @@ atom:251
 
 
  > create:
-*:252
-...19
+*:206
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5537,8 +4580,8 @@ atom:251
 
 
  > create:
-atom:253
-...19
+atom:207
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5555,8 +4598,8 @@ atom:253
 
 
  > create:
-atom:254
-...19
+atom:208
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5573,8 +4616,8 @@ atom:254
 
 
  > create:
-atom:255
-...19
+atom:209
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5591,8 +4634,8 @@ atom:255
 
 
  > create:
-expr:256 cachable
-...19
+expr:210 cachable
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5609,8 +4652,8 @@ expr:256 cachable
 
 
  > create:
-atom:257
-...19
+atom:211
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5627,8 +4670,8 @@ atom:257
 
 
  > create:
-expr:258 cachable
-...19
+expr:212 cachable
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5645,8 +4688,8 @@ expr:258 cachable
 
 
  > create:
-atom:259
-...19
+atom:213
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5663,8 +4706,8 @@ atom:259
 
 
  > create:
-atom:260
-...19
+atom:214
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5681,8 +4724,8 @@ atom:260
 
 
  > create:
-fun:261
-...19
+fun:215
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5699,8 +4742,8 @@ fun:261
 
 
  > create:
-expr:262 cachable
-...19
+expr:216 cachable
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5717,8 +4760,8 @@ expr:262 cachable
 
 
  > create:
-atom:263
-...19
+atom:217
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5735,8 +4778,8 @@ atom:263
 
 
  > create:
-expr:264 cachable
-...19
+expr:218 cachable
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5753,8 +4796,8 @@ expr:264 cachable
 
 
  > create:
-atom:265
-...19
+atom:219
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5771,8 +4814,8 @@ atom:265
 
 
  > create:
-!:266
-...19
+!:220
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5789,8 +4832,8 @@ atom:265
 
 
  > create:
-|:267
-...19
+|:221
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5807,8 +4850,8 @@ atom:265
 
 
  > create:
-atom:268
-...19
+atom:222
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5825,8 +4868,8 @@ atom:268
 
 
  > create:
-fun:269
-...19
+fun:223
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5843,8 +4886,8 @@ fun:269
 
 
  > create:
-atom:270
-...19
+atom:224
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5861,8 +4904,8 @@ atom:270
 
 
  > create:
-fun:271
-...19
+fun:225
+...17
           switch (
             case (x>10, continue (i)),
             case (x<0, call (doIt))
@@ -5991,8 +5034,8 @@ expr 1 {
               }
             }
             expr: expr 58 cachable >> 52 {
-              result: || 59 >> 58 {
-                left: || 60 >> 59 {
+              result: ~ 59 >> 58 {
+                left: ~ 60 >> 59 {
                   left: atom 61 >> 60
                   right: atom 62 >> 60 {
                     path: path 63 >> 62 {
@@ -6025,131 +5068,41 @@ expr 1 {
           fun: fun 75 >> 74 {
             expr: expr 76 cachable >> 75 {
               result: atom 77 >> 76 {
-                path: path 78 >> 77 {
-                  segment: segment 79 >> 78 {
-                    name: client
-                  }
-                  segment: segment 80 >> 78 {
-                    name: surname
-                  }
-                }
-              }
-            }
-            expr: expr 81 cachable >> 75 {
-              result: ~ 82 >> 81 {
-                left: ~ 83 >> 82 {
-                  left: atom 84 >> 83
-                  right: atom 85 >> 83 {
-                    path: path 86 >> 85 {
-                      segment: segment 87 >> 86 {
-                        name: in
-                      }
-                      segment: segment 88 >> 86 {
-                        name: surname
-                      }
-                    }
-                  }
-                }
-                right: + 89 >> 82 {
-                  left: atom 90 >> 89
-                  right: % 91 >> 89 {
-                    left: * 92 >> 91 {
-                      left: atom 93 >> 92
-                      right: atom 94 >> 92
-                    }
-                    right: atom 95 >> 91
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      expr: expr 96 cachable >> 3 {
-        result: atom 97 >> 96 {
-          fun: fun 98 >> 97 {
-            expr: expr 99 cachable >> 98 {
-              result: atom 100 >> 99 {
-                path: path 101 >> 100 {
-                  segment: segment 102 >> 101 {
-                    name: client
-                  }
-                  segment: segment 103 >> 101 {
-                    name: surname
-                  }
-                }
-              }
-            }
-            expr: expr 104 cachable >> 98 {
-              result: ^ 105 >> 104 {
-                left: ^ 106 >> 105 {
-                  left: atom 107 >> 106
-                  right: atom 108 >> 106 {
-                    path: path 109 >> 108 {
-                      segment: segment 110 >> 109 {
-                        name: in
-                      }
-                      segment: segment 111 >> 109 {
-                        name: surname
-                      }
-                    }
-                  }
-                }
-                right: + 112 >> 105 {
-                  left: atom 113 >> 112
-                  right: % 114 >> 112 {
-                    left: * 115 >> 114 {
-                      left: atom 116 >> 115
-                      right: atom 117 >> 115
-                    }
-                    right: atom 118 >> 114
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-      expr: expr 119 cachable >> 3 {
-        result: atom 120 >> 119 {
-          fun: fun 121 >> 120 {
-            expr: expr 122 cachable >> 121 {
-              result: atom 123 >> 122 {
-                fun: fun 124 >> 123 {
-                  expr: expr 125 cachable >> 124 {
-                    result: > 126 >> 125 {
-                      left: - 127 >> 126 {
-                        left: atom 128 >> 127 {
-                          fun: fun 129 >> 128 {
-                            expr: expr 130 cachable >> 129 {
-                              result: atom 131 >> 130
+                fun: fun 78 >> 77 {
+                  expr: expr 79 cachable >> 78 {
+                    result: > 80 >> 79 {
+                      left: - 81 >> 80 {
+                        left: atom 82 >> 81 {
+                          fun: fun 83 >> 82 {
+                            expr: expr 84 cachable >> 83 {
+                              result: atom 85 >> 84
                             }
                           }
                         }
-                        right: atom 132 >> 127 {
-                          fun: fun 133 >> 132
+                        right: atom 86 >> 81 {
+                          fun: fun 87 >> 86
                         }
                       }
-                      right: atom 134 >> 126 {
-                        fun: fun 135 >> 134 {
-                          expr: expr 136 cachable >> 135 {
-                            result: atom 137 >> 136
+                      right: atom 88 >> 80 {
+                        fun: fun 89 >> 88 {
+                          expr: expr 90 cachable >> 89 {
+                            result: atom 91 >> 90
                           }
                         }
                       }
                     }
                   }
-                  expr: expr 138 cachable >> 124 {
-                    result: atom 139 >> 138 {
-                      fun: fun 140 >> 139 {
-                        expr: expr 141 cachable >> 140 {
-                          result: atom 142 >> 141 {
-                            fun: fun 143 >> 142
+                  expr: expr 92 cachable >> 78 {
+                    result: atom 93 >> 92 {
+                      fun: fun 94 >> 93 {
+                        expr: expr 95 cachable >> 94 {
+                          result: atom 96 >> 95 {
+                            fun: fun 97 >> 96
                           }
                         }
-                        expr: expr 144 cachable >> 140 {
-                          result: atom 145 >> 144 {
-                            fun: fun 146 >> 145
+                        expr: expr 98 cachable >> 94 {
+                          result: atom 99 >> 98 {
+                            fun: fun 100 >> 99
                           }
                         }
                       }
@@ -6158,19 +5111,19 @@ expr 1 {
                 }
               }
             }
-            expr: expr 147 cachable >> 121 {
-              result: atom 148 >> 147 {
-                fun: fun 149 >> 148 {
-                  expr: expr 150 cachable >> 149 {
-                    result: = 151 >> 150 {
-                      left: + 152 >> 151 {
-                        left: atom 153 >> 152
-                        right: atom 154 >> 152 {
-                          fun: fun 155 >> 154 {
-                            expr: expr 156 cachable >> 155 {
-                              result: atom 157 >> 156 {
-                                path: path 158 >> 157 {
-                                  segment: segment 159 >> 158 {
+            expr: expr 101 cachable >> 75 {
+              result: atom 102 >> 101 {
+                fun: fun 103 >> 102 {
+                  expr: expr 104 cachable >> 103 {
+                    result: = 105 >> 104 {
+                      left: + 106 >> 105 {
+                        left: atom 107 >> 106
+                        right: atom 108 >> 106 {
+                          fun: fun 109 >> 108 {
+                            expr: expr 110 cachable >> 109 {
+                              result: atom 111 >> 110 {
+                                path: path 112 >> 111 {
+                                  segment: segment 113 >> 112 {
                                     name: x
                                   }
                                 }
@@ -6179,102 +5132,102 @@ expr 1 {
                           }
                         }
                       }
-                      right: atom 160 >> 151
+                      right: atom 114 >> 105
                     }
                   }
-                  expr: expr 161 cachable >> 149 {
-                    result: atom 162 >> 161 {
-                      fun: fun 163 >> 162
+                  expr: expr 115 cachable >> 103 {
+                    result: atom 116 >> 115 {
+                      fun: fun 117 >> 116
                     }
                   }
                 }
               }
             }
-            expr: expr 164 cachable >> 121 {
-              result: atom 165 >> 164 {
-                fun: fun 166 >> 165 {
-                  expr: expr 167 cachable >> 166 {
-                    result: atom 168 >> 167 {
-                      path: path 169 >> 168 {
-                        segment: segment 170 >> 169 {
+            expr: expr 118 cachable >> 75 {
+              result: atom 119 >> 118 {
+                fun: fun 120 >> 119 {
+                  expr: expr 121 cachable >> 120 {
+                    result: atom 122 >> 121 {
+                      path: path 123 >> 122 {
+                        segment: segment 124 >> 123 {
                           name: true
                         }
                       }
                     }
                   }
-                  expr: expr 171 cachable >> 166 {
-                    result: atom 172 >> 171 {
-                      fun: fun 173 >> 172 {
-                        expr: expr 174 cachable >> 173 {
-                          result: atom 175 >> 174 {
-                            path: path 176 >> 175 {
-                              segment: segment 177 >> 176 {
+                  expr: expr 125 cachable >> 120 {
+                    result: atom 126 >> 125 {
+                      fun: fun 127 >> 126 {
+                        expr: expr 128 cachable >> 127 {
+                          result: atom 129 >> 128 {
+                            path: path 130 >> 129 {
+                              segment: segment 131 >> 130 {
                                 name: i
                               }
                             }
                           }
                         }
-                        expr: expr 178 cachable >> 173 {
-                          result: atom 179 >> 178
+                        expr: expr 132 cachable >> 127 {
+                          result: atom 133 >> 132
                         }
-                        expr: expr 180 cachable >> 173 {
-                          result: atom 181 >> 180
+                        expr: expr 134 cachable >> 127 {
+                          result: atom 135 >> 134
                         }
-                        expr: expr 182 cachable >> 173 {
-                          result: atom 183 >> 182 {
-                            fun: fun 184 >> 183 {
-                              expr: expr 185 cachable >> 184 {
-                                result: atom 186 >> 185 {
-                                  fun: fun 187 >> 186 {
-                                    expr: expr 188 cachable >> 187 {
-                                      result: atom 189 >> 188 {
-                                        path: path 190 >> 189 {
-                                          segment: segment 191 >> 190 {
+                        expr: expr 136 cachable >> 127 {
+                          result: atom 137 >> 136 {
+                            fun: fun 138 >> 137 {
+                              expr: expr 139 cachable >> 138 {
+                                result: atom 140 >> 139 {
+                                  fun: fun 141 >> 140 {
+                                    expr: expr 142 cachable >> 141 {
+                                      result: atom 143 >> 142 {
+                                        path: path 144 >> 143 {
+                                          segment: segment 145 >> 144 {
                                             name: x
                                           }
                                         }
                                       }
                                     }
-                                    expr: expr 192 cachable >> 187 {
-                                      result: + 193 >> 192 {
-                                        left: atom 194 >> 193 {
-                                          path: path 195 >> 194 {
-                                            segment: segment 196 >> 195 {
+                                    expr: expr 146 cachable >> 141 {
+                                      result: + 147 >> 146 {
+                                        left: atom 148 >> 147 {
+                                          path: path 149 >> 148 {
+                                            segment: segment 150 >> 149 {
                                               name: x
                                             }
                                           }
                                         }
-                                        right: atom 197 >> 193
+                                        right: atom 151 >> 147
                                       }
                                     }
                                   }
                                 }
                               }
-                              expr: expr 198 cachable >> 184 {
-                                result: atom 199 >> 198 {
-                                  fun: fun 200 >> 199 {
-                                    expr: expr 201 cachable >> 200 {
-                                      result: atom 202 >> 201 {
-                                        fun: fun 203 >> 202 {
-                                          expr: expr 204 cachable >> 203 {
-                                            result: > 205 >> 204 {
-                                              left: atom 206 >> 205 {
-                                                path: path 207 >> 206 {
-                                                  segment: segment 208 >> 207 {
+                              expr: expr 152 cachable >> 138 {
+                                result: atom 153 >> 152 {
+                                  fun: fun 154 >> 153 {
+                                    expr: expr 155 cachable >> 154 {
+                                      result: atom 156 >> 155 {
+                                        fun: fun 157 >> 156 {
+                                          expr: expr 158 cachable >> 157 {
+                                            result: > 159 >> 158 {
+                                              left: atom 160 >> 159 {
+                                                path: path 161 >> 160 {
+                                                  segment: segment 162 >> 161 {
                                                     name: x
                                                   }
                                                 }
                                               }
-                                              right: atom 209 >> 205
+                                              right: atom 163 >> 159
                                             }
                                           }
-                                          expr: expr 210 cachable >> 203 {
-                                            result: atom 211 >> 210 {
-                                              fun: fun 212 >> 211 {
-                                                expr: expr 213 cachable >> 212 {
-                                                  result: atom 214 >> 213 {
-                                                    path: path 215 >> 214 {
-                                                      segment: segment 216 >> 215 {
+                                          expr: expr 164 cachable >> 157 {
+                                            result: atom 165 >> 164 {
+                                              fun: fun 166 >> 165 {
+                                                expr: expr 167 cachable >> 166 {
+                                                  result: atom 168 >> 167 {
+                                                    path: path 169 >> 168 {
+                                                      segment: segment 170 >> 169 {
                                                         name: i
                                                       }
                                                     }
@@ -6286,28 +5239,28 @@ expr 1 {
                                         }
                                       }
                                     }
-                                    expr: expr 217 cachable >> 200 {
-                                      result: atom 218 >> 217 {
-                                        fun: fun 219 >> 218 {
-                                          expr: expr 220 cachable >> 219 {
-                                            result: < 221 >> 220 {
-                                              left: atom 222 >> 221 {
-                                                path: path 223 >> 222 {
-                                                  segment: segment 224 >> 223 {
+                                    expr: expr 171 cachable >> 154 {
+                                      result: atom 172 >> 171 {
+                                        fun: fun 173 >> 172 {
+                                          expr: expr 174 cachable >> 173 {
+                                            result: < 175 >> 174 {
+                                              left: atom 176 >> 175 {
+                                                path: path 177 >> 176 {
+                                                  segment: segment 178 >> 177 {
                                                     name: x
                                                   }
                                                 }
                                               }
-                                              right: atom 225 >> 221
+                                              right: atom 179 >> 175
                                             }
                                           }
-                                          expr: expr 226 cachable >> 219 {
-                                            result: atom 227 >> 226 {
-                                              fun: fun 228 >> 227 {
-                                                expr: expr 229 cachable >> 228 {
-                                                  result: atom 230 >> 229 {
-                                                    path: path 231 >> 230 {
-                                                      segment: segment 232 >> 231 {
+                                          expr: expr 180 cachable >> 173 {
+                                            result: atom 181 >> 180 {
+                                              fun: fun 182 >> 181 {
+                                                expr: expr 183 cachable >> 182 {
+                                                  result: atom 184 >> 183 {
+                                                    path: path 185 >> 184 {
+                                                      segment: segment 186 >> 185 {
                                                         name: doIt
                                                       }
                                                     }
@@ -6334,67 +5287,67 @@ expr 1 {
           }
         }
       }
-      expr: expr 233 cachable >> 3 {
-        result: atom 234 >> 233 {
-          fun: fun 235 >> 234 {
-            expr: expr 236 cachable >> 235 {
-              result: atom 237 >> 236 {
-                path: path 238 >> 237 {
-                  segment: segment 239 >> 238 {
+      expr: expr 187 cachable >> 3 {
+        result: atom 188 >> 187 {
+          fun: fun 189 >> 188 {
+            expr: expr 190 cachable >> 189 {
+              result: atom 191 >> 190 {
+                path: path 192 >> 191 {
+                  segment: segment 193 >> 192 {
                     name: y
                   }
                 }
               }
             }
-            expr: expr 240 cachable >> 235 {
-              result: & 241 >> 240 {
-                left: >= 242 >> 241 {
-                  left: atom 243 >> 242 {
-                    fun: fun 244 >> 243 {
-                      expr: expr 245 cachable >> 244 {
-                        result: atom 246 >> 245 {
-                          fun: fun 247 >> 246 {
-                            expr: expr 248 cachable >> 247 {
-                              result: / 249 >> 248 {
-                                left: + 250 >> 249 {
-                                  left: atom 251 >> 250
-                                  right: * 252 >> 250 {
-                                    left: atom 253 >> 252
-                                    right: atom 254 >> 252
+            expr: expr 194 cachable >> 189 {
+              result: & 195 >> 194 {
+                left: >= 196 >> 195 {
+                  left: atom 197 >> 196 {
+                    fun: fun 198 >> 197 {
+                      expr: expr 199 cachable >> 198 {
+                        result: atom 200 >> 199 {
+                          fun: fun 201 >> 200 {
+                            expr: expr 202 cachable >> 201 {
+                              result: / 203 >> 202 {
+                                left: + 204 >> 203 {
+                                  left: atom 205 >> 204
+                                  right: * 206 >> 204 {
+                                    left: atom 207 >> 206
+                                    right: atom 208 >> 206
                                   }
                                 }
-                                right: atom 255 >> 249
+                                right: atom 209 >> 203
                               }
                             }
-                            expr: expr 256 cachable >> 247 {
-                              result: atom 257 >> 256
+                            expr: expr 210 cachable >> 201 {
+                              result: atom 211 >> 210
                             }
                           }
                         }
                       }
-                      expr: expr 258 cachable >> 244 {
-                        result: atom 259 >> 258
+                      expr: expr 212 cachable >> 198 {
+                        result: atom 213 >> 212
                       }
                     }
                   }
-                  right: atom 260 >> 242 {
-                    fun: fun 261 >> 260 {
-                      expr: expr 262 cachable >> 261 {
-                        result: atom 263 >> 262
+                  right: atom 214 >> 196 {
+                    fun: fun 215 >> 214 {
+                      expr: expr 216 cachable >> 215 {
+                        result: atom 217 >> 216
                       }
-                      expr: expr 264 cachable >> 261 {
-                        result: atom 265 >> 264
+                      expr: expr 218 cachable >> 215 {
+                        result: atom 219 >> 218
                       }
                     }
                   }
                 }
-                right: ! 266 >> 241 {
-                  operand: | 267 >> 266 {
-                    left: atom 268 >> 267 {
-                      fun: fun 269 >> 268
+                right: ! 220 >> 195 {
+                  operand: | 221 >> 220 {
+                    left: atom 222 >> 221 {
+                      fun: fun 223 >> 222
                     }
-                    right: atom 270 >> 267 {
-                      fun: fun 271 >> 270
+                    right: atom 224 >> 221 {
+                      fun: fun 225 >> 224
                     }
                   }
                 }

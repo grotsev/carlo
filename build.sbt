@@ -1,3 +1,5 @@
+enablePlugins(ScalaJSPlugin)
+
 name := "carlo"
 
 version := "1.0"
