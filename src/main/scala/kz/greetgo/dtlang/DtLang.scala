@@ -156,9 +156,8 @@ object DtLang {
       )
     }
 
-    val fun = rule("fun") {
+    val call = rule("call") {
       sequence(
-        token("name"),
         token("("),
         zeroOrMore(
           branch("expr", expr),
@@ -173,8 +172,10 @@ object DtLang {
       choice(
         token("string"),
         token("number"),
-        branch("fun", fun),
-        branch("path", path)
+        sequence(
+          branch("path", path),
+          branch("call", optional(call))
+        )
       )
     }
 

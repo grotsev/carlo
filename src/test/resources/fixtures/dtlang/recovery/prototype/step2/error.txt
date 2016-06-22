@@ -1,10 +1,2 @@
- > code mismatched:
-f(g<<<(x)>>>
-
-
- > code mismatched:
-f<<<(>>>g(x)
-
-
- > path entries must be separated with . sign:
-f(<<<>>>g(x)
+ > function call must end with ) sign:
+f(g(x)<<<>>>
