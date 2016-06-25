@@ -13,8 +13,4 @@ class DtLangSpec extends ParserSpec("dtlang") {
 
     (lexer, syntax)
   }
-
-  def main(args: Array[String]) {
-    println("Hello")
-  }
 }
