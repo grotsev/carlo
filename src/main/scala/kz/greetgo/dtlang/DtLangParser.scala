@@ -29,7 +29,12 @@ object DtLangParser {
     array
   }
 
-  val statements = List("seq", "switch", "case", "call", "let", "for", "break", "continue")
+  val statements = List(
+    "Assign",
+    "Group",
+    "Condition", "Case",
+    "ForEach", "Break", "Continue",
+    "Procedure", "Exit", "Stop", "Message", "Error")
 
   def extractStatements(array: js.Array[js.Any], node: Node, parent: Option[Int] = None): Unit = {
     for (
@@ -43,7 +48,7 @@ object DtLangParser {
       val id = node.getId
       val element = js.Dynamic.literal(
         "id" -> id,
-        "parent" -> parent.orUndefined,
+        "parent" -> parent.map(_.toString).getOrElse[String]("#"),
         "text" -> name,
         "type" -> name
       )
@@ -169,32 +174,34 @@ object DtLangParser {
   def main(args: Array[String]) {
     val x = allNodeList(
       """
-        |seq (
-        |  let (x, 5),
-        |  let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-        |  let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
-        |  switch (
-        |    case (
+        |Group ( /* comment */ // comment
+        |  Assign (x, 5),
+        |  Assign (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+        |  Assign (client.surname, "Mr."~in.surname~1+2*3%4),
+        |  Condition (
+        |    Case (
         |      date("2016-03-04")-today()>month(5),
-        |      seq (
-        |        return (),
-        |        break ()
+        |      Group (
+        |        Stop (),
+        |        Exit ()
         |      )
         |    ),
-        |    case (22+size(x) = 0, continue()),
-        |    case (true,
-        |      for (i, 1, 50,
-        |        seq (
-        |          let (x, x+1),
-        |          switch (
-        |            case (x>10, continue (i)),
-        |            case (x<0, call (doIt))
+        |    Case (22+size(x) = 0, Continue()),
+        |    Case (true,
+        |      ForEach (i, 1, 50,
+        |        Group (
+        |          Assign (x, x+1),
+        |          Condition (
+        |            Case (x>10,
+        |              Continue (i)),
+        |            Case (x<0,
+        |              Procedure (doIt))
         |          )
         |        )
         |      )
         |    )
         |  ),
-        |  let (
+        |  Assign (
         |    y,
         |    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
         |  )
