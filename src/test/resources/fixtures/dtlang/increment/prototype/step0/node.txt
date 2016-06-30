@@ -1,0 +1,227 @@
+ > create:
+atom:2
+<<<group (
+  group (
+    assign (x, 3)
+  )
+)>>>
+
+
+ > create:
+call:3 cachable
+group <<<(
+  group (
+    assign (x, 3)
+  )
+)>>>
+
+
+ > create:
+expr:4 cachable
+group (
+  <<<group (
+    assign (x, 3)
+  )>>>
+)
+
+
+ > create:
+atom:5
+group (
+  <<<group (
+    assign (x, 3)
+  )>>>
+)
+
+
+ > create:
+call:6 cachable
+group (
+  group <<<(
+    assign (x, 3)
+  )>>>
+)
+
+
+ > create:
+expr:7 cachable
+group (
+  group (
+    <<<assign (x, 3)>>>
+  )
+)
+
+
+ > create:
+atom:8
+group (
+  group (
+    <<<assign (x, 3)>>>
+  )
+)
+
+
+ > create:
+call:9 cachable
+group (
+  group (
+    assign <<<(x, 3)>>>
+  )
+)
+
+
+ > create:
+expr:10 cachable
+group (
+  group (
+    assign (<<<x>>>, 3)
+  )
+)
+
+
+ > create:
+atom:11
+group (
+  group (
+    assign (<<<x>>>, 3)
+  )
+)
+
+
+ > create:
+path:12 cachable
+group (
+  group (
+    assign (<<<x>>>, 3)
+  )
+)
+
+
+ > create:
+segment:13
+group (
+  group (
+    assign (<<<x>>>, 3)
+  )
+)
+
+
+ > create:
+expr:14 cachable
+group (
+  group (
+    assign (x, <<<3>>>)
+  )
+)
+
+
+ > create:
+atom:15
+group (
+  group (
+    assign (x, <<<3>>>)
+  )
+)
+
+
+ > create:
+path:16 cachable
+group (
+  group (
+    <<<assign>>> (x, 3)
+  )
+)
+
+
+ > create:
+segment:17
+group (
+  group (
+    <<<assign>>> (x, 3)
+  )
+)
+
+
+ > create:
+path:18 cachable
+group (
+  <<<group>>> (
+    assign (x, 3)
+  )
+)
+
+
+ > create:
+segment:19
+group (
+  <<<group>>> (
+    assign (x, 3)
+  )
+)
+
+
+ > create:
+path:20 cachable
+<<<group>>> (
+  group (
+    assign (x, 3)
+  )
+)
+
+
+ > create:
+segment:21
+<<<group>>> (
+  group (
+    assign (x, 3)
+  )
+)
+
+
+ > merge:
+expr 1 {
+  result: atom 2 >> 1 {
+    call: call 3 cachable >> 2 {
+      expr: expr 4 cachable >> 3 {
+        result: atom 5 >> 4 {
+          call: call 6 cachable >> 5 {
+            expr: expr 7 cachable >> 6 {
+              result: atom 8 >> 7 {
+                call: call 9 cachable >> 8 {
+                  expr: expr 10 cachable >> 9 {
+                    result: atom 11 >> 10 {
+                      path: path 12 cachable >> 11 {
+                        segment: segment 13 >> 12 {
+                          name: x
+                        }
+                      }
+                    }
+                  }
+                  expr: expr 14 cachable >> 9 {
+                    result: atom 15 >> 14
+                  }
+                }
+                path: path 16 cachable >> 8 {
+                  segment: segment 17 >> 16 {
+                    name: assign
+                  }
+                }
+              }
+            }
+          }
+          path: path 18 cachable >> 5 {
+            segment: segment 19 >> 18 {
+              name: group
+            }
+          }
+        }
+      }
+    }
+    path: path 20 cachable >> 2 {
+      segment: segment 21 >> 20 {
+        name: group
+      }
+    }
+  }
+}
+

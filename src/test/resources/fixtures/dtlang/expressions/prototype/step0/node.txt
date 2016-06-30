@@ -33,7 +33,7 @@ atom:2
 
 
  > create:
-call:3
+call:3 cachable
 seq <<<(
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -99,7 +99,7 @@ seq (
 13...
 
  > create:
-call:6
+call:6 cachable
 seq (
   let <<<(x, 5)>>>,
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -147,7 +147,7 @@ seq (
 13...
 
  > create:
-path:9
+path:9 cachable
 seq (
   let (<<<x>>>, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -211,7 +211,7 @@ seq (
 13...
 
  > create:
-path:13
+path:13 cachable
 seq (
   <<<let>>> (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -277,7 +277,7 @@ seq (
 14...
 
  > create:
-call:17
+call:17 cachable
 seq (
   let (x, 5),
   let <<<(client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4)>>>,
@@ -328,7 +328,7 @@ seq (
 14...
 
  > create:
-path:20
+path:20 cachable
 seq (
   let (x, 5),
   let (<<<client.account[type:in.account[1].type][1].sum>>>, in.sum+100_0001 + 1+ 2*3%4),
@@ -379,7 +379,7 @@ seq (
 14...
 
  > create:
-index:23
+index:23 cachable
 seq (
   let (x, 5),
   let (client.account<<<[type:in.account[1].type]>>>[1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -430,7 +430,7 @@ seq (
 14...
 
  > create:
-path:26
+path:26 cachable
 seq (
   let (x, 5),
   let (client.account[type:<<<in.account[1].type>>>][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -481,7 +481,7 @@ seq (
 14...
 
  > create:
-index:29
+index:29 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account<<<[1]>>>.type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -549,7 +549,7 @@ seq (
 14...
 
  > create:
-index:33
+index:33 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type]<<<[1]>>>.sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -702,7 +702,7 @@ seq (
 14...
 
  > create:
-path:42
+path:42 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, <<<in.sum>>>+100_0001 + 1+ 2*3%4),
@@ -872,7 +872,7 @@ seq (
 14...
 
  > create:
-path:52
+path:52 cachable
 seq (
   let (x, 5),
   <<<let>>> (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -942,7 +942,7 @@ seq (
 15...
 
  > create:
-call:56
+call:56 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -996,7 +996,7 @@ seq (
 15...
 
  > create:
-path:59
+path:59 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1140,7 +1140,7 @@ seq (
 15...
 
  > create:
-path:67
+path:67 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1320,7 +1320,7 @@ seq (
 15...
 
  > create:
-path:77
+path:77 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1424,7 +1424,7 @@ seq (
 
 
  > create:
-call:81
+call:81 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1510,7 +1510,7 @@ seq (
 23...
 
  > create:
-call:84
+call:84 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1620,7 +1620,7 @@ seq (
 18...
 
  > create:
-call:89
+call:89 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1683,7 +1683,7 @@ seq (
 18...
 
  > create:
-path:92
+path:92 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1746,7 +1746,7 @@ seq (
 18...
 
  > create:
-call:95
+call:95 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1767,7 +1767,7 @@ seq (
 18...
 
  > create:
-path:96
+path:96 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1830,7 +1830,7 @@ seq (
 18...
 
  > create:
-call:99
+call:99 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1893,7 +1893,7 @@ seq (
 18...
 
  > create:
-path:102
+path:102 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -1985,7 +1985,7 @@ seq (
 22...
 
  > create:
-call:106
+call:106 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -2056,7 +2056,7 @@ seq (
 20...
 
  > create:
-call:109
+call:109 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -2079,7 +2079,7 @@ seq (
 20...
 
  > create:
-path:110
+path:110 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -2173,7 +2173,7 @@ seq (
 21...
 
  > create:
-call:114
+call:114 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -2197,7 +2197,7 @@ seq (
 21...
 
  > create:
-path:115
+path:115 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -2245,7 +2245,7 @@ seq (
 21...
 
  > create:
-path:117
+path:117 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -2289,7 +2289,7 @@ seq (
 19...
 
  > create:
-path:119
+path:119 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -2381,7 +2381,7 @@ atom:122
 24...
 
  > create:
-call:123
+call:123 cachable
 ...2
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
@@ -2537,7 +2537,7 @@ atom:128
 24...
 
  > create:
-call:129
+call:129 cachable
 ...2
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
@@ -2615,7 +2615,7 @@ atom:131
 24...
 
  > create:
-path:132
+path:132 cachable
 ...2
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
@@ -2667,7 +2667,7 @@ segment:133
 24...
 
  > create:
-path:134
+path:134 cachable
 ...2
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
@@ -2797,7 +2797,7 @@ atom:138
 24...
 
  > create:
-call:139
+call:139 cachable
 ...2
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
@@ -2823,7 +2823,7 @@ call:139
 24...
 
  > create:
-path:140
+path:140 cachable
 ...2
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
@@ -2875,7 +2875,7 @@ segment:141
 24...
 
  > create:
-path:142
+path:142 cachable
 ...2
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
@@ -2991,7 +2991,7 @@ atom:145
 
 
  > create:
-call:146
+call:146 cachable
 ...3
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
@@ -3075,7 +3075,7 @@ atom:148
 25...
 
  > create:
-path:149
+path:149 cachable
 ...3
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
@@ -3189,7 +3189,7 @@ atom:152
 
 
  > create:
-call:153
+call:153 cachable
 ...4
   switch (
     case (
@@ -3272,7 +3272,7 @@ atom:155
 26...
 
  > create:
-path:156
+path:156 cachable
 ...4
   switch (
     case (
@@ -3488,7 +3488,7 @@ atom:163
 
 
  > create:
-call:164
+call:164 cachable
 ...5
     case (
       date("2016-03-04")-today()>month(5),
@@ -3570,7 +3570,7 @@ atom:166
 28...
 
  > create:
-call:167
+call:167 cachable
 ...6
       date("2016-03-04")-today()>month(5),
       seq (
@@ -3648,7 +3648,7 @@ atom:169
 28...
 
  > create:
-path:170
+path:170 cachable
 ...6
       date("2016-03-04")-today()>month(5),
       seq (
@@ -3778,7 +3778,7 @@ atom:174
 28...
 
  > create:
-path:175
+path:175 cachable
 ...6
       date("2016-03-04")-today()>month(5),
       seq (
@@ -3856,7 +3856,7 @@ atom:177
 28...
 
  > create:
-path:178
+path:178 cachable
 ...6
       date("2016-03-04")-today()>month(5),
       seq (
@@ -3964,7 +3964,7 @@ atom:181
 
 
  > create:
-call:182
+call:182 cachable
 ...7
       seq (
         return (),
@@ -4044,7 +4044,7 @@ atom:184
 30...
 
  > create:
-call:185
+call:185 cachable
 ...8
         return (),
         break ()
@@ -4148,7 +4148,7 @@ atom:188
 30...
 
  > create:
-path:189
+path:189 cachable
 ...8
         return (),
         break ()
@@ -4278,7 +4278,7 @@ atom:193
 30...
 
  > create:
-call:194
+call:194 cachable
 ...8
         return (),
         break ()
@@ -4356,7 +4356,7 @@ atom:196
 30...
 
  > create:
-path:197
+path:197 cachable
 ...8
         return (),
         break ()
@@ -4408,7 +4408,7 @@ segment:198
 30...
 
  > create:
-path:199
+path:199 cachable
 ...8
         return (),
         break ()
@@ -4460,7 +4460,7 @@ segment:200
 30...
 
  > create:
-path:201
+path:201 cachable
 ...8
         return (),
         break ()
@@ -4564,7 +4564,7 @@ atom:204
 31...
 
  > create:
-call:205
+call:205 cachable
 ...9
         break ()
       )
@@ -4668,7 +4668,7 @@ atom:208
 31...
 
  > create:
-path:209
+path:209 cachable
 ...9
         break ()
       )
@@ -4798,7 +4798,7 @@ atom:213
 31...
 
  > create:
-call:214
+call:214 cachable
 ...9
         break ()
       )
@@ -4876,7 +4876,7 @@ atom:216
 31...
 
  > create:
-path:217
+path:217 cachable
 ...9
         break ()
       )
@@ -4928,7 +4928,7 @@ segment:218
 31...
 
  > create:
-path:219
+path:219 cachable
 ...9
         break ()
       )
@@ -4980,7 +4980,7 @@ segment:220
 31...
 
  > create:
-path:221
+path:221 cachable
 ...9
         break ()
       )
@@ -5032,7 +5032,7 @@ segment:222
 31...
 
  > create:
-path:223
+path:223 cachable
 ...7
       seq (
         return (),
@@ -5084,7 +5084,7 @@ segment:224
 29...
 
  > create:
-path:225
+path:225 cachable
 ...5
     case (
       date("2016-03-04")-today()>month(5),
@@ -5136,7 +5136,7 @@ segment:226
 27...
 
  > create:
-path:227
+path:227 cachable
 ...4
   switch (
     case (
@@ -5188,7 +5188,7 @@ segment:228
 26...
 
  > create:
-path:229
+path:229 cachable
 ...3
   let (client.surname, "Mr."~in.surname~1+2*3%4),  // which one is the best || ~ ^
   switch (
@@ -5240,7 +5240,7 @@ segment:230
 25...
 
  > create:
-path:231
+path:231 cachable
 seq (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -5318,7 +5318,7 @@ atom:234
 
 
  > create:
-call:235
+call:235 cachable
 ...15
         seq (
           let (x, x+1),
@@ -5376,7 +5376,7 @@ atom:237
 
 
  > create:
-path:238
+path:238 cachable
 ...16
           let (x, x+1),
           switch (
@@ -5486,7 +5486,7 @@ atom:243
 
 
  > create:
-call:244
+call:244 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -5540,7 +5540,7 @@ atom:246
 
 
  > create:
-call:247
+call:247 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -5738,7 +5738,7 @@ atom:257
 
 
  > create:
-path:258
+path:258 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -5810,7 +5810,7 @@ atom:261
 
 
  > create:
-path:262
+path:262 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -5864,7 +5864,7 @@ atom:264
 
 
  > create:
-call:265
+call:265 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -5954,7 +5954,7 @@ atom:269
 
 
  > create:
-path:270
+path:270 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -6044,7 +6044,7 @@ atom:274
 
 
  > create:
-call:275
+call:275 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -6062,7 +6062,7 @@ call:275
 
 
  > create:
-path:276
+path:276 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -6116,7 +6116,7 @@ atom:278
 
 
  > create:
-call:279
+call:279 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -6134,7 +6134,7 @@ call:279
 
 
  > create:
-path:280
+path:280 cachable
 ...17
           switch (
             case (x>10, continue (i)),
@@ -6170,7 +6170,7 @@ segment:281
 
 
  > create:
-path:282
+path:282 cachable
 ...15
         seq (
           let (x, x+1),
@@ -6210,7 +6210,7 @@ segment:283
 
 
  > create:
-path:284
+path:284 cachable
 <<<seq>>> (
   let (x, 5),
   let (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
@@ -6242,13 +6242,13 @@ segment:285
  > merge:
 expr 1 {
   result: atom 2 >> 1 {
-    call: call 3 >> 2 {
+    call: call 3 cachable >> 2 {
       expr: expr 4 cachable >> 3 {
         result: atom 5 >> 4 {
-          call: call 6 >> 5 {
+          call: call 6 cachable >> 5 {
             expr: expr 7 cachable >> 6 {
               result: atom 8 >> 7 {
-                path: path 9 >> 8 {
+                path: path 9 cachable >> 8 {
                   segment: segment 10 >> 9 {
                     name: x
                   }
@@ -6259,7 +6259,7 @@ expr 1 {
               result: atom 12 >> 11
             }
           }
-          path: path 13 >> 5 {
+          path: path 13 cachable >> 5 {
             segment: segment 14 >> 13 {
               name: let
             }
@@ -6268,25 +6268,25 @@ expr 1 {
       }
       expr: expr 15 cachable >> 3 {
         result: atom 16 >> 15 {
-          call: call 17 >> 16 {
+          call: call 17 cachable >> 16 {
             expr: expr 18 cachable >> 17 {
               result: atom 19 >> 18 {
-                path: path 20 >> 19 {
+                path: path 20 cachable >> 19 {
                   segment: segment 21 >> 20 {
                     name: client
                   }
                   segment: segment 22 >> 20 {
                     name: account
-                    index: index 23 >> 22 {
+                    index: index 23 cachable >> 22 {
                       filter: expr 24 cachable >> 23 {
                         result: atom 25 >> 24 {
-                          path: path 26 >> 25 {
+                          path: path 26 cachable >> 25 {
                             segment: segment 27 >> 26 {
                               name: in
                             }
                             segment: segment 28 >> 26 {
                               name: account
-                              index: index 29 >> 28 {
+                              index: index 29 cachable >> 28 {
                                 filter: expr 30 cachable >> 29 {
                                   result: atom 31 >> 30
                                 }
@@ -6299,7 +6299,7 @@ expr 1 {
                         }
                       }
                     }
-                    index: index 33 >> 22 {
+                    index: index 33 cachable >> 22 {
                       filter: expr 34 cachable >> 33 {
                         result: atom 35 >> 34
                       }
@@ -6316,7 +6316,7 @@ expr 1 {
                 left: + 39 >> 38 {
                   left: + 40 >> 39 {
                     left: atom 41 >> 40 {
-                      path: path 42 >> 41 {
+                      path: path 42 cachable >> 41 {
                         segment: segment 43 >> 42 {
                           name: in
                         }
@@ -6339,7 +6339,7 @@ expr 1 {
               }
             }
           }
-          path: path 52 >> 16 {
+          path: path 52 cachable >> 16 {
             segment: segment 53 >> 52 {
               name: let
             }
@@ -6348,10 +6348,10 @@ expr 1 {
       }
       expr: expr 54 cachable >> 3 {
         result: atom 55 >> 54 {
-          call: call 56 >> 55 {
+          call: call 56 cachable >> 55 {
             expr: expr 57 cachable >> 56 {
               result: atom 58 >> 57 {
-                path: path 59 >> 58 {
+                path: path 59 cachable >> 58 {
                   segment: segment 60 >> 59 {
                     name: client
                   }
@@ -6366,7 +6366,7 @@ expr 1 {
                 left: ~ 64 >> 63 {
                   left: atom 65 >> 64
                   right: atom 66 >> 64 {
-                    path: path 67 >> 66 {
+                    path: path 67 cachable >> 66 {
                       segment: segment 68 >> 67 {
                         name: in
                       }
@@ -6389,7 +6389,7 @@ expr 1 {
               }
             }
           }
-          path: path 77 >> 55 {
+          path: path 77 cachable >> 55 {
             segment: segment 78 >> 77 {
               name: let
             }
@@ -6398,28 +6398,28 @@ expr 1 {
       }
       expr: expr 79 cachable >> 3 {
         result: atom 80 >> 79 {
-          call: call 81 >> 80 {
+          call: call 81 cachable >> 80 {
             expr: expr 82 cachable >> 81 {
               result: atom 83 >> 82 {
-                call: call 84 >> 83 {
+                call: call 84 cachable >> 83 {
                   expr: expr 85 cachable >> 84 {
                     result: > 86 >> 85 {
                       left: - 87 >> 86 {
                         left: atom 88 >> 87 {
-                          call: call 89 >> 88 {
+                          call: call 89 cachable >> 88 {
                             expr: expr 90 cachable >> 89 {
                               result: atom 91 >> 90
                             }
                           }
-                          path: path 92 >> 88 {
+                          path: path 92 cachable >> 88 {
                             segment: segment 93 >> 92 {
                               name: date
                             }
                           }
                         }
                         right: atom 94 >> 87 {
-                          call: call 95 >> 94
-                          path: path 96 >> 94 {
+                          call: call 95 cachable >> 94
+                          path: path 96 cachable >> 94 {
                             segment: segment 97 >> 96 {
                               name: today
                             }
@@ -6427,12 +6427,12 @@ expr 1 {
                         }
                       }
                       right: atom 98 >> 86 {
-                        call: call 99 >> 98 {
+                        call: call 99 cachable >> 98 {
                           expr: expr 100 cachable >> 99 {
                             result: atom 101 >> 100
                           }
                         }
-                        path: path 102 >> 98 {
+                        path: path 102 cachable >> 98 {
                           segment: segment 103 >> 102 {
                             name: month
                           }
@@ -6442,11 +6442,11 @@ expr 1 {
                   }
                   expr: expr 104 cachable >> 84 {
                     result: atom 105 >> 104 {
-                      call: call 106 >> 105 {
+                      call: call 106 cachable >> 105 {
                         expr: expr 107 cachable >> 106 {
                           result: atom 108 >> 107 {
-                            call: call 109 >> 108
-                            path: path 110 >> 108 {
+                            call: call 109 cachable >> 108
+                            path: path 110 cachable >> 108 {
                               segment: segment 111 >> 110 {
                                 name: return
                               }
@@ -6455,8 +6455,8 @@ expr 1 {
                         }
                         expr: expr 112 cachable >> 106 {
                           result: atom 113 >> 112 {
-                            call: call 114 >> 113
-                            path: path 115 >> 113 {
+                            call: call 114 cachable >> 113
+                            path: path 115 cachable >> 113 {
                               segment: segment 116 >> 115 {
                                 name: break
                               }
@@ -6464,7 +6464,7 @@ expr 1 {
                           }
                         }
                       }
-                      path: path 117 >> 105 {
+                      path: path 117 cachable >> 105 {
                         segment: segment 118 >> 117 {
                           name: seq
                         }
@@ -6472,7 +6472,7 @@ expr 1 {
                     }
                   }
                 }
-                path: path 119 >> 83 {
+                path: path 119 cachable >> 83 {
                   segment: segment 120 >> 119 {
                     name: case
                   }
@@ -6481,16 +6481,16 @@ expr 1 {
             }
             expr: expr 121 cachable >> 81 {
               result: atom 122 >> 121 {
-                call: call 123 >> 122 {
+                call: call 123 cachable >> 122 {
                   expr: expr 124 cachable >> 123 {
                     result: = 125 >> 124 {
                       left: + 126 >> 125 {
                         left: atom 127 >> 126
                         right: atom 128 >> 126 {
-                          call: call 129 >> 128 {
+                          call: call 129 cachable >> 128 {
                             expr: expr 130 cachable >> 129 {
                               result: atom 131 >> 130 {
-                                path: path 132 >> 131 {
+                                path: path 132 cachable >> 131 {
                                   segment: segment 133 >> 132 {
                                     name: x
                                   }
@@ -6498,7 +6498,7 @@ expr 1 {
                               }
                             }
                           }
-                          path: path 134 >> 128 {
+                          path: path 134 cachable >> 128 {
                             segment: segment 135 >> 134 {
                               name: size
                             }
@@ -6510,8 +6510,8 @@ expr 1 {
                   }
                   expr: expr 137 cachable >> 123 {
                     result: atom 138 >> 137 {
-                      call: call 139 >> 138
-                      path: path 140 >> 138 {
+                      call: call 139 cachable >> 138
+                      path: path 140 cachable >> 138 {
                         segment: segment 141 >> 140 {
                           name: continue
                         }
@@ -6519,7 +6519,7 @@ expr 1 {
                     }
                   }
                 }
-                path: path 142 >> 122 {
+                path: path 142 cachable >> 122 {
                   segment: segment 143 >> 142 {
                     name: case
                   }
@@ -6528,10 +6528,10 @@ expr 1 {
             }
             expr: expr 144 cachable >> 81 {
               result: atom 145 >> 144 {
-                call: call 146 >> 145 {
+                call: call 146 cachable >> 145 {
                   expr: expr 147 cachable >> 146 {
                     result: atom 148 >> 147 {
-                      path: path 149 >> 148 {
+                      path: path 149 cachable >> 148 {
                         segment: segment 150 >> 149 {
                           name: true
                         }
@@ -6540,10 +6540,10 @@ expr 1 {
                   }
                   expr: expr 151 cachable >> 146 {
                     result: atom 152 >> 151 {
-                      call: call 153 >> 152 {
+                      call: call 153 cachable >> 152 {
                         expr: expr 154 cachable >> 153 {
                           result: atom 155 >> 154 {
-                            path: path 156 >> 155 {
+                            path: path 156 cachable >> 155 {
                               segment: segment 157 >> 156 {
                                 name: i
                               }
@@ -6558,13 +6558,13 @@ expr 1 {
                         }
                         expr: expr 162 cachable >> 153 {
                           result: atom 163 >> 162 {
-                            call: call 164 >> 163 {
+                            call: call 164 cachable >> 163 {
                               expr: expr 165 cachable >> 164 {
                                 result: atom 166 >> 165 {
-                                  call: call 167 >> 166 {
+                                  call: call 167 cachable >> 166 {
                                     expr: expr 168 cachable >> 167 {
                                       result: atom 169 >> 168 {
-                                        path: path 170 >> 169 {
+                                        path: path 170 cachable >> 169 {
                                           segment: segment 171 >> 170 {
                                             name: x
                                           }
@@ -6574,7 +6574,7 @@ expr 1 {
                                     expr: expr 172 cachable >> 167 {
                                       result: + 173 >> 172 {
                                         left: atom 174 >> 173 {
-                                          path: path 175 >> 174 {
+                                          path: path 175 cachable >> 174 {
                                             segment: segment 176 >> 175 {
                                               name: x
                                             }
@@ -6584,7 +6584,7 @@ expr 1 {
                                       }
                                     }
                                   }
-                                  path: path 178 >> 166 {
+                                  path: path 178 cachable >> 166 {
                                     segment: segment 179 >> 178 {
                                       name: let
                                     }
@@ -6593,14 +6593,14 @@ expr 1 {
                               }
                               expr: expr 180 cachable >> 164 {
                                 result: atom 181 >> 180 {
-                                  call: call 182 >> 181 {
+                                  call: call 182 cachable >> 181 {
                                     expr: expr 183 cachable >> 182 {
                                       result: atom 184 >> 183 {
-                                        call: call 185 >> 184 {
+                                        call: call 185 cachable >> 184 {
                                           expr: expr 186 cachable >> 185 {
                                             result: > 187 >> 186 {
                                               left: atom 188 >> 187 {
-                                                path: path 189 >> 188 {
+                                                path: path 189 cachable >> 188 {
                                                   segment: segment 190 >> 189 {
                                                     name: x
                                                   }
@@ -6611,10 +6611,10 @@ expr 1 {
                                           }
                                           expr: expr 192 cachable >> 185 {
                                             result: atom 193 >> 192 {
-                                              call: call 194 >> 193 {
+                                              call: call 194 cachable >> 193 {
                                                 expr: expr 195 cachable >> 194 {
                                                   result: atom 196 >> 195 {
-                                                    path: path 197 >> 196 {
+                                                    path: path 197 cachable >> 196 {
                                                       segment: segment 198 >> 197 {
                                                         name: i
                                                       }
@@ -6622,7 +6622,7 @@ expr 1 {
                                                   }
                                                 }
                                               }
-                                              path: path 199 >> 193 {
+                                              path: path 199 cachable >> 193 {
                                                 segment: segment 200 >> 199 {
                                                   name: continue
                                                 }
@@ -6630,7 +6630,7 @@ expr 1 {
                                             }
                                           }
                                         }
-                                        path: path 201 >> 184 {
+                                        path: path 201 cachable >> 184 {
                                           segment: segment 202 >> 201 {
                                             name: case
                                           }
@@ -6639,11 +6639,11 @@ expr 1 {
                                     }
                                     expr: expr 203 cachable >> 182 {
                                       result: atom 204 >> 203 {
-                                        call: call 205 >> 204 {
+                                        call: call 205 cachable >> 204 {
                                           expr: expr 206 cachable >> 205 {
                                             result: < 207 >> 206 {
                                               left: atom 208 >> 207 {
-                                                path: path 209 >> 208 {
+                                                path: path 209 cachable >> 208 {
                                                   segment: segment 210 >> 209 {
                                                     name: x
                                                   }
@@ -6654,10 +6654,10 @@ expr 1 {
                                           }
                                           expr: expr 212 cachable >> 205 {
                                             result: atom 213 >> 212 {
-                                              call: call 214 >> 213 {
+                                              call: call 214 cachable >> 213 {
                                                 expr: expr 215 cachable >> 214 {
                                                   result: atom 216 >> 215 {
-                                                    path: path 217 >> 216 {
+                                                    path: path 217 cachable >> 216 {
                                                       segment: segment 218 >> 217 {
                                                         name: doIt
                                                       }
@@ -6665,7 +6665,7 @@ expr 1 {
                                                   }
                                                 }
                                               }
-                                              path: path 219 >> 213 {
+                                              path: path 219 cachable >> 213 {
                                                 segment: segment 220 >> 219 {
                                                   name: call
                                                 }
@@ -6673,7 +6673,7 @@ expr 1 {
                                             }
                                           }
                                         }
-                                        path: path 221 >> 204 {
+                                        path: path 221 cachable >> 204 {
                                           segment: segment 222 >> 221 {
                                             name: case
                                           }
@@ -6681,7 +6681,7 @@ expr 1 {
                                       }
                                     }
                                   }
-                                  path: path 223 >> 181 {
+                                  path: path 223 cachable >> 181 {
                                     segment: segment 224 >> 223 {
                                       name: switch
                                     }
@@ -6689,7 +6689,7 @@ expr 1 {
                                 }
                               }
                             }
-                            path: path 225 >> 163 {
+                            path: path 225 cachable >> 163 {
                               segment: segment 226 >> 225 {
                                 name: seq
                               }
@@ -6697,7 +6697,7 @@ expr 1 {
                           }
                         }
                       }
-                      path: path 227 >> 152 {
+                      path: path 227 cachable >> 152 {
                         segment: segment 228 >> 227 {
                           name: for
                         }
@@ -6705,7 +6705,7 @@ expr 1 {
                     }
                   }
                 }
-                path: path 229 >> 145 {
+                path: path 229 cachable >> 145 {
                   segment: segment 230 >> 229 {
                     name: case
                   }
@@ -6713,7 +6713,7 @@ expr 1 {
               }
             }
           }
-          path: path 231 >> 80 {
+          path: path 231 cachable >> 80 {
             segment: segment 232 >> 231 {
               name: switch
             }
@@ -6722,10 +6722,10 @@ expr 1 {
       }
       expr: expr 233 cachable >> 3 {
         result: atom 234 >> 233 {
-          call: call 235 >> 234 {
+          call: call 235 cachable >> 234 {
             expr: expr 236 cachable >> 235 {
               result: atom 237 >> 236 {
-                path: path 238 >> 237 {
+                path: path 238 cachable >> 237 {
                   segment: segment 239 >> 238 {
                     name: y
                   }
@@ -6736,10 +6736,10 @@ expr 1 {
               result: & 241 >> 240 {
                 left: >= 242 >> 241 {
                   left: atom 243 >> 242 {
-                    call: call 244 >> 243 {
+                    call: call 244 cachable >> 243 {
                       expr: expr 245 cachable >> 244 {
                         result: atom 246 >> 245 {
-                          call: call 247 >> 246 {
+                          call: call 247 cachable >> 246 {
                             expr: expr 248 cachable >> 247 {
                               result: / 249 >> 248 {
                                 left: + 250 >> 249 {
@@ -6756,7 +6756,7 @@ expr 1 {
                               result: atom 257 >> 256
                             }
                           }
-                          path: path 258 >> 246 {
+                          path: path 258 cachable >> 246 {
                             segment: segment 259 >> 258 {
                               name: max
                             }
@@ -6767,14 +6767,14 @@ expr 1 {
                         result: atom 261 >> 260
                       }
                     }
-                    path: path 262 >> 243 {
+                    path: path 262 cachable >> 243 {
                       segment: segment 263 >> 262 {
                         name: min
                       }
                     }
                   }
                   right: atom 264 >> 242 {
-                    call: call 265 >> 264 {
+                    call: call 265 cachable >> 264 {
                       expr: expr 266 cachable >> 265 {
                         result: atom 267 >> 266
                       }
@@ -6782,7 +6782,7 @@ expr 1 {
                         result: atom 269 >> 268
                       }
                     }
-                    path: path 270 >> 264 {
+                    path: path 270 cachable >> 264 {
                       segment: segment 271 >> 270 {
                         name: round
                       }
@@ -6792,16 +6792,16 @@ expr 1 {
                 right: ! 272 >> 241 {
                   operand: | 273 >> 272 {
                     left: atom 274 >> 273 {
-                      call: call 275 >> 274
-                      path: path 276 >> 274 {
+                      call: call 275 cachable >> 274
+                      path: path 276 cachable >> 274 {
                         segment: segment 277 >> 276 {
                           name: true
                         }
                       }
                     }
                     right: atom 278 >> 273 {
-                      call: call 279 >> 278
-                      path: path 280 >> 278 {
+                      call: call 279 cachable >> 278
+                      path: path 280 cachable >> 278 {
                         segment: segment 281 >> 280 {
                           name: false
                         }
@@ -6812,7 +6812,7 @@ expr 1 {
               }
             }
           }
-          path: path 282 >> 234 {
+          path: path 282 cachable >> 234 {
             segment: segment 283 >> 282 {
               name: let
             }
@@ -6820,7 +6820,7 @@ expr 1 {
         }
       }
     }
-    path: path 284 >> 2 {
+    path: path 284 cachable >> 2 {
       segment: segment 285 >> 284 {
         name: seq
       }

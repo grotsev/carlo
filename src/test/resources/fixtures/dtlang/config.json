@@ -9,4 +9,9 @@
         "independentSteps": true,
         "monitors": ["error"]
     }
+    "increment": {
+        "steps": 2,
+        "independentSteps": false,
+        "monitors": ["fragment", "cache", "node", "error"]
+    }
 }

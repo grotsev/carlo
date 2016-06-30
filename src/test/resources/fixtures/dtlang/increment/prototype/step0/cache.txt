@@ -1,0 +1,36 @@
+ > invalidate:
+Node 1. Fragment:
+<<<group (
+  group (
+    assign (x, 3)
+  )
+)
+>>>
+
+ > create:
+Node 3. Fragment:
+group <<<(
+  group (
+    assign (x, 3)
+  )
+)>>>
+
+
+ > create:
+Node 6. Fragment:
+group (
+  group <<<(
+    assign (x, 3)
+  )>>>
+)
+
+
+ > create:
+Node 9. Fragment:
+group (
+  group (
+    assign <<<(x, 3)>>>
+  )
+)
+
+

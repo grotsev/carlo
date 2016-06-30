@@ -1,0 +1,32 @@
+ > create:
+group (
+  group (
+    assign <<<(x, 3)>>>
+  )
+)
+
+
+ > create:
+group (
+  group <<<(
+    assign (x, 3)
+  )>>>
+)
+
+
+ > create:
+group <<<(
+  group (
+    assign (x, 3)
+  )
+)>>>
+
+
+ > invalidate:
+<<<group (
+  group (
+    assign (x, 3)
+  )
+)
+>>>
+

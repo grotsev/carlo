@@ -1,0 +1,24 @@
+ > remove:
+group (
+  group (
+    assign <<<(x, 3)>>>
+  )
+)
+
+
+ > create:
+group (
+  group (
+    empty <<<()>>>
+  )
+)
+
+
+ > invalidate:
+group (
+  group <<<(
+    empty ()
+  )>>>
+)
+
+

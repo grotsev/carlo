@@ -1,0 +1,27 @@
+ > remove:
+Node 9. Fragment:
+group (
+  group (
+    assign <<<(x, 3)>>>
+  )
+)
+
+
+ > invalidate:
+Node 6. Fragment:
+group (
+  group <<<(
+    empty ()
+  )>>>
+)
+
+
+ > create:
+Node 24. Fragment:
+group (
+  group (
+    empty <<<()>>>
+  )
+)
+
+
