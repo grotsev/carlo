@@ -1,5 +1,3 @@
 group (
-  group (
-    empty ()
-  )
+  empty ()
 )
