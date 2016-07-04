@@ -36,13 +36,16 @@ object DtLangParser {
   @JSExport
   def replace(text: String, oldId: UndefOr[Int]): UndefOr[js.Dynamic] = {
     firstAddedExpr = None
-    if (oldId.isDefined) {
+    val node:Node = if (oldId.isDefined) {
       val oldNode: Node = syntax.getNode(oldId.get).get // WARN should find, otherwise bug is somewhere
       lexer.input(text, tokenPos(oldNode.getBegin), tokenPos(oldNode.getEnd, after = true))
-    } else lexer.input(text)
-    val n = firstAddedExpr;
+      val n = firstAddedExpr;
+      syntax.getNode(n.get).get // should be Some
+    } else {
+      lexer.input(text)
+      syntax.getRootNode.get // should be Some
+    }
     firstAddedExpr = None
-    val node = syntax.getNode(n.get).get // should be Some
     extractStats(node).orUndefined;
   }
 
@@ -59,7 +62,14 @@ object DtLangParser {
       val element = js.Dynamic.literal(
         "id" -> id,
         "parent" -> parent.map(_.toString).getOrElse[String]("#"),
-        "text" -> name,
+        "text" -> (name match {
+          case "foreach" => {
+            val exprs = call.getBranches("expr")
+            val e = (i: Int) => exprs(i).sourceCode
+            "foreach " + e(0) + " := " + e(1) + " .. " + e(2)
+          }
+          case _ => name
+        }),
         "type" -> name
       )
       val children = new js.Array[js.Any]
@@ -81,42 +91,42 @@ object DtLangParser {
   def main(args: Array[String]) {
     lexer.input("group(assign(x, 3))")
     val y = replace("empty()", 4)
-/*    val x = allNodeList(
-      """
-        |group ( /* comment */ // comment
-        |  assign (x, 5),
-        |  assign (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
-        |  assign (client.surname, "Mr."~in.surname~1+2*3%4),
-        |  condition (
-        |    case (
-        |      date("2016-03-04")-today()>month(5),
-        |      group (
-        |        stop (),
-        |        exit ()
-        |      )
-        |    ),
-        |    case (22+size(x) = 0, continue()),
-        |    case (true,
-        |      foreach (i, 1, 50,
-        |        group (
-        |          assign (x, x+1),
-        |          condition (
-        |            case (x>10,
-        |              continue (i)),
-        |            case (x<0,
-        |              procedure (doIt))
-        |          )
-        |        )
-        |      )
-        |    )
-        |  ),
-        |  assign (
-        |    y,
-        |    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
-        |  )
-        |)
-      """.stripMargin);
-    println(x);*/
+    /*    val x = allNodeList(
+          """
+            |group ( /* comment */ // comment
+            |  assign (x, 5),
+            |  assign (client.account[type:in.account[1].type][1].sum, in.sum+100_0001 + 1+ 2*3%4),
+            |  assign (client.surname, "Mr."~in.surname~1+2*3%4),
+            |  condition (
+            |    case (
+            |      date("2016-03-04")-today()>month(5),
+            |      group (
+            |        stop (),
+            |        exit ()
+            |      )
+            |    ),
+            |    case (22+size(x) = 0, continue()),
+            |    case (true,
+            |      foreach (i, 1, 50,
+            |        group (
+            |          assign (x, x+1),
+            |          condition (
+            |            case (x>10,
+            |              continue (i)),
+            |            case (x<0,
+            |              procedure (doIt))
+            |          )
+            |        )
+            |      )
+            |    )
+            |  ),
+            |  assign (
+            |    y,
+            |    min(max((1+2*3)/4, 0), 10) >= round(5.555_555__, 1) & ! (true () | false ())
+            |  )
+            |)
+          """.stripMargin);
+        println(x);*/
   }
 }
 
