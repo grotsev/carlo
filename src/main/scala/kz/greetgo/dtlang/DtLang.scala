@@ -89,7 +89,7 @@ object DtLang {
     import Rule._
     import syntax._
 
-    val expr: Rule = rule("expr").cachable.main {
+    val expr: Rule = rule("expr").main.cachable {
       val rule = expression(branch("operand", atom))
 
       var p = 1
@@ -170,8 +170,8 @@ object DtLang {
 
     val atom = rule("atom") {
       choice(
-        token("string"),
-        token("number"),
+        capture("num", token("number")),
+        capture("str", token("string")),
         sequence(
           branch("path", path),
           branch("call", optional(call))
