@@ -3,7 +3,7 @@ package kz.greetgo.dtlang
 import java.util
 import java.util.OptionalInt
 import java.util.function.IntPredicate
-
+import scala.collection.JavaConversions._
 import name.lakhin.eliah.projects.papacarlo.Syntax
 import name.lakhin.eliah.projects.papacarlo.syntax.Node
 
@@ -233,20 +233,24 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
         None
       }
       case "error" => throw new ErrorException(if (arg.size == 0) None else Some(arg(0).sourceCode))
-      /* TODO
-    case "len" =>
-    case "min" =>
-    case "max" =>
-    case "round" =>
-    case "power" =>
 
-    case "true" =>
-    case "false" =>
+      case "len" =>
+        val path: String = arg(0).sourceCode
+        val subMap = scope.subMap(path + "." + "\0", path + ('.' + 1).toChar.toString)
+        val split: String => String = _.substring(path.length+1).split("\\.", 2)(0)
+        Some(Num(subMap.keySet.map(split).toSet.size))
+      /*case "min" =>
+      case "max" =>
+      case "round" =>
+      case "power" =>
 
-    case "today" =>
-    case "day" =>
-    case "month" =>
-    case "year" =>*/
+      case "true" =>
+      case "false" =>
+
+      case "today" =>
+      case "day" =>
+      case "month" =>
+      case "year" =>*/
     }
   }
 
