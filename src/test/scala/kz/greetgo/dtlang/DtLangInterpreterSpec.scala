@@ -33,8 +33,10 @@ class DtLangInterpreterSpec extends FunSpec {
       |  case (1=1,
       |    group (
       |      assign(a, 5+2),
-      |      assign(b, a~b)
-      |      assign(l, len(x))
+      |      assign(b, a~b),
+      |      assign(l, len(x)),
+      |      assign(dat1, date("2015-01-02")),
+      |      assign(dat2, date(2015,1,2))
       |    )
       |  )
       |)

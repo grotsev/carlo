@@ -1,8 +1,12 @@
 package kz.greetgo.dtlang
 
+import java.math.{MathContext, RoundingMode}
+import java.time.format.DateTimeParseException
+import java.time.{LocalDate, Period}
 import java.util
 import java.util.OptionalInt
 import java.util.function.IntPredicate
+
 import scala.collection.JavaConversions._
 import name.lakhin.eliah.projects.papacarlo.Syntax
 import name.lakhin.eliah.projects.papacarlo.syntax.Node
@@ -237,20 +241,62 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
       case "len" =>
         val path: String = arg(0).sourceCode
         val subMap = scope.subMap(path + "." + "\0", path + ('.' + 1).toChar.toString)
-        val split: String => String = _.substring(path.length+1).split("\\.", 2)(0)
+        val split: String => String = _.substring(path.length + 1).split("\\.", 2)(0)
         Some(Num(subMap.keySet.map(split).toSet.size))
       /*case "min" =>
-      case "max" =>
-      case "round" =>
-      case "power" =>
+      case "max" =>*/
+      case "round" => arg.size match {
+        case 1 => evalExpr(arg(0)) match {
+          case Some(Num(num)) => Some(Num(num.round(MathContext.UNLIMITED)))
+          case _ => None
+        }
+        case 2 => (evalExpr(arg(0)), evalExpr(arg(1))) match {
+          case (Some(Num(num0)), Some(Num(num1))) => Some(Num(num0.round(new MathContext(num1.toInt, RoundingMode.HALF_UP))))
+          case _ => None
+        }
+      }
+      case "power" => (evalExpr(arg(0)), evalExpr(arg(1))) match {
+        case (Some(Num(num0)), Some(Num(num1))) => Some(Num(BigDecimal(Math.pow(num0.toDouble, num1.toDouble))))
+        case _ => None
+      }
 
-      case "true" =>
-      case "false" =>
+      case "true" => Some(Bool(true))
+      case "false" => Some(Bool(false))
 
-      case "today" =>
-      case "day" =>
-      case "month" =>
-      case "year" =>*/
+      case "date" => arg.size match {
+        case 1 => evalExpr(arg(0)) match {
+          case Some(Str(str)) => try Some(Dat(LocalDate.parse(str))) catch {
+            case e: DateTimeParseException => None
+          }
+          case _ => None
+        }
+        case 3 => (evalExpr(arg(0)), evalExpr(arg(1)), evalExpr(arg(2))) match {
+          case (Some(Num(year)), Some(Num(month)), Some(Num(day))) => Some(Dat(LocalDate.of(year.toInt, month.toInt, day.toInt)))
+          case _ => None
+        }
+      }
+      case "today" => Some(Dat(LocalDate.now()))
+      case "day" => arg.size match {
+        case 0 => Some(Per(Period.ofDays(1)))
+        case 1 => evalExpr(arg(0)) match {
+          case Some(Dat(dat)) => Some(Num(dat.getDayOfMonth))
+          case _ => None
+        }
+      }
+      case "month" => arg.size match {
+        case 0 => Some(Per(Period.ofMonths(1)))
+        case 1 => evalExpr(arg(0)) match {
+          case Some(Dat(dat)) => Some(Num(dat.getMonthValue))
+          case _ => None
+        }
+      }
+      case "year" => arg.size match {
+        case 0 => Some(Per(Period.ofYears(1)))
+        case 1 => evalExpr(arg(0)) match {
+          case Some(Dat(dat)) => Some(Num(dat.getYear))
+          case _ => None
+        }
+      }
     }
   }
 
@@ -258,23 +304,6 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
     path.sourceCode // TODO
   }
 
-  /*
-    def step() {
-      val nodeId = stack.head
-      val node = syntax.getNode(nodeId).get
-      node.getBranches()
-    }
-
-    def stepInto()
-
-    def stepOver()
-
-    def run()
-
-    def setBreakPoint(nodeId: Int)
-
-    def clearBreakPoint(nodeId: Int)
-  */
 }
 
 private class BreakException(val label: Option[String]) extends RuntimeException
