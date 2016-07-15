@@ -14,7 +14,7 @@ import name.lakhin.eliah.projects.papacarlo.syntax.Node
 /**
   * Created by den on 11.07.16.
   */
-class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[String, Node]) {
+class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: util.Map[String, Node]) {
   var messages: List[String] = Nil
 
   private def group(exprs: List[Node]): Option[DtType] = {
@@ -215,7 +215,7 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
   private def evalFun(name: String, arg: List[Node]): Option[DtType] = {
     name match {
       case "empty" => None
-      case "assign" => assign(evalPath(arg(0)), evalExpr(arg(1)))
+      case "assign" => assign(evalPath(arg(0).getBranches("result").head), evalExpr(arg(1)))
       case "group" => group(arg)
 
       case "condition" => condition(arg)
@@ -242,7 +242,7 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
       case "break" => throw new BreakException(if (arg.size == 0) None else Some(arg(0).sourceCode))
       case "continue" => throw new ContinueException(if (arg.size == 0) None else Some(arg(0).sourceCode))
 
-      case "procedure" => procedures.get(arg(0).sourceCode).flatMap(node => {
+      case "procedure" => Option(procedures.get(arg(0).sourceCode)).flatMap(node => {
         try {
           evalExpr(node)
         } catch {
@@ -325,6 +325,8 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
   }
 
   private def evalPath(path: Node): String = {
+    //val segs = path.getBranches("segment")
+    //segs.red
     path.sourceCode // TODO
   }
 

@@ -133,7 +133,7 @@ object DtLang {
       sequence(
         token("["),
         optional(sequence(
-          branch("field", token("name")), // TODO capture token anywhere
+          capture("field", token("name")),
           token(":")
         )),
         branch("filter", expr),

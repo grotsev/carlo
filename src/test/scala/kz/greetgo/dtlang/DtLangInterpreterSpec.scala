@@ -20,7 +20,7 @@ class DtLangInterpreterSpec extends FunSpec {
     value
   }
 
-  private var procedures: Map[String, Node] = Map()
+  private var procedures: util.Map[String, Node] = new util.HashMap()
 
   private val interpreter = new DtLangInterpreter(scope, procedures)
 
