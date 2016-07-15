@@ -72,13 +72,6 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
     f(operand)
   }
 
-  private def unaryNumOp(expr: Node, f: Function[BigDecimal, BigDecimal]) = {
-    unaryOp(expr, {
-      case Some(Num(o)) => Some(Num(f(o)))
-      case _ => None
-    })
-  }
-
   private def binaryOp(expr: Node, f: Function2[Option[DtType], Option[DtType], Option[DtType]]) = {
     val left = evalExpr(expr.getBranches("left").head)
     val right = evalExpr(expr.getBranches("right").head)
@@ -116,11 +109,35 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
       case "expr" => evalExpr(expr.getBranches("result").head)
 
       case "+" =>
-        if (expr.getBranches.contains("operand")) unaryNumOp(expr, identity)
-        else numOp(expr, _ + _)
+        if (expr.getBranches.contains("operand"))
+          unaryOp(expr, {
+            case x@Some(Num(_)) => x
+            case x@Some(Per(_)) => x
+            case x@Some(Bool(_)) => x
+            case _ => None
+          })
+        else binaryOp(expr, (left, right) => (left, right) match {
+          case (Some(Num(l)), Some(Num(r))) => Some(Num(l + r))
+          case (Some(Dat(l)), Some(Per(r))) => Some(Dat(l plus r))
+          case (Some(Per(l)), Some(Per(r))) => Some(Per(l plus r))
+          case (Some(Per(l)), Some(Dat(r))) => Some(Dat(r plus l))
+          case _ => None
+        })
       case "-" =>
-        if (expr.getBranches.contains("operand")) unaryNumOp(expr, _.unary_-)
-        else numOp(expr, _ + _)
+        if (expr.getBranches.contains("operand"))
+          unaryOp(expr, {
+            case Some(Num(num)) => Some(Num(-num))
+            case Some(Per(per)) => Some(Per(per.negated()))
+            case Some(Bool(bool)) => Some(Bool(!bool))
+            case _ => None
+          })
+        else binaryOp(expr, (left, right) => (left, right) match {
+          case (Some(Num(l)), Some(Num(r))) => Some(Num(l - r))
+          case (Some(Dat(l)), Some(Per(r))) => Some(Dat(l minus r))
+          case (Some(Per(l)), Some(Per(r))) => Some(Per(l minus r))
+          case (Some(Dat(l)), Some(Dat(r))) => Some(Per(l until r))
+          case _ => None
+        })
       case "!" =>
         unaryOp(expr, {
           case Some(Bool(o)) => Some(Bool(!o))
@@ -128,7 +145,12 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
         })
 
       case "*" =>
-        numOp(expr, _ * _)
+        binaryOp(expr, (left, right) => (left, right) match {
+          case (Some(Num(l)), Some(Num(r))) => Some(Num(l * r))
+          case (Some(Num(num)), Some(Per(per))) => Some(Per(per multipliedBy num.toInt))
+          case (Some(Per(per)), Some(Num(num))) => Some(Per(per multipliedBy num.toInt))
+          case _ => None
+        })
       case "/" =>
         numOp(expr, _ / _)
       case "%" =>

@@ -36,7 +36,7 @@ class DtLangInterpreterSpec extends FunSpec {
       |      assign(b, a~b),
       |      assign(l, len(x)),
       |      assign(dat1, date("2015-01-02")),
-      |      assign(dat2, date(2015,1,2))
+      |      assign(dat2, date(2015,1,2) + (4*day()+3*month()) )
       |    )
       |  )
       |)
