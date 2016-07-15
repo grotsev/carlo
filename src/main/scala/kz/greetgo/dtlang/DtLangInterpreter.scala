@@ -215,7 +215,7 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: util.
   private def evalFun(name: String, arg: List[Node]): Option[DtType] = {
     name match {
       case "empty" => None
-      case "assign" => assign(evalPath(arg(0).getBranches("result").head), evalExpr(arg(1)))
+      case "assign" => assign(evalPath(arg(0).getBranches("result").head.getBranches("path").head), evalExpr(arg(1)))
       case "group" => group(arg)
 
       case "condition" => condition(arg)
@@ -325,9 +325,15 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: util.
   }
 
   private def evalPath(path: Node): String = {
-    //val segs = path.getBranches("segment")
-    //segs.red
-    path.sourceCode // TODO
+    val segs = path.getBranches("segment")
+    segs.foldLeft("") {
+      (acc, seg) => {
+        val name = seg.getValues("name").head
+        val prefix = if (acc.isEmpty) name else acc + "." + name
+
+        prefix
+      }
+    }
   }
 
 }
