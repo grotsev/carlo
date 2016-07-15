@@ -98,6 +98,7 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
     case Some(Num(v)) => v.toString
     case Some(Str(v)) => v.toString
     case Some(Dat(v)) => v.toString
+    case Some(Per(v)) => v.toString
   }
 
   private def compareOp(expr: Node, p: Int => Boolean): Option[DtType] = {
@@ -106,6 +107,7 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: Map[S
       case (Some(Num(l)), Some(Num(r))) => Some(Bool(p(l.compare(r))))
       case (Some(Str(l)), Some(Str(r))) => Some(Bool(p(l.compareTo(r))))
       case (Some(Dat(l)), Some(Dat(r))) => Some(Bool(p(l.compareTo(r))))
+      case _ => None
     })
   }
 
