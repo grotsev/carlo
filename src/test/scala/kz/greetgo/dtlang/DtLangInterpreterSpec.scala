@@ -12,8 +12,8 @@ class DtLangInterpreterSpec extends FunSpec {
   private val scope: util.SortedMap[String, DtType] = new util.TreeMap()
   scope.put("a", Str("AA"))
   scope.put("b", Str("BB"))
-  scope.put("x.1", Str("x1"))
-  scope.put("x.2", Str("x2"))
+  scope.put("x.1.type", Str("x1"))
+  scope.put("x.2.type", Str("x2"))
   scope.put("x.2.1", Str("x2.1"))
   private val assign = (name:String, value:Option[DtType]) => {
     println(name, value)
@@ -36,7 +36,8 @@ class DtLangInterpreterSpec extends FunSpec {
       |      assign(b, a~b),
       |      assign(l, len(x)),
       |      assign(dat1, date("2015-01-02")),
-      |      assign(dat2, date(2015,1,2) + (4*day()+3*month()) )
+      |      assign(dat2, date(2015,1,2) + (4*day()+3*month()) ),
+      |      assign(pathed, x[type:"x2"][0].type)
       |    )
       |  )
       |)

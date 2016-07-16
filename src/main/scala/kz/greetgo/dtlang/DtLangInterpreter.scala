@@ -207,15 +207,24 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: util.
           if (expr.getBranches.contains("call"))
             evalFun(path.sourceCode, expr.getBranches("call").head.getBranches.getOrElse("expr", List()))
           else
-            Option(scope get evalPath(path)) // variable access
+            evalPath(path).flatMap(x => Option(scope get x)) // variable access
         }
     }
+  }
+
+  private def children(path: String): Seq[String] = {
+    val subMap = scope.subMap(path + "." + "\0", path + ('.' + 1).toChar.toString)
+    val split: String => String = _.substring(path.length + 1).split("\\.", 2)(0)
+    subMap.keySet.map(split).toSeq.distinct
   }
 
   private def evalFun(name: String, arg: List[Node]): Option[DtType] = {
     name match {
       case "empty" => None
-      case "assign" => assign(evalPath(arg(0).getBranches("result").head.getBranches("path").head), evalExpr(arg(1)))
+      case "assign" => {
+        val to = evalPath(arg(0).getBranches("result").head.getBranches("path").head)
+        if (to.isDefined) assign(to.get, evalExpr(arg(1))) else None
+      }
       case "group" => group(arg)
 
       case "condition" => condition(arg)
@@ -263,10 +272,7 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: util.
       case "error" => throw new ErrorException(if (arg.size == 0) None else Some(arg(0).sourceCode))
 
       case "len" =>
-        val path: String = arg(0).sourceCode
-        val subMap = scope.subMap(path + "." + "\0", path + ('.' + 1).toChar.toString)
-        val split: String => String = _.substring(path.length + 1).split("\\.", 2)(0)
-        Some(Num(subMap.keySet.map(split).toSet.size))
+        Some(Num(children(arg(0).sourceCode).size))
       /*case "min" =>
       case "max" =>*/
       case "round" => arg.size match {
@@ -324,16 +330,37 @@ class DtLangInterpreter(scope: util.SortedMap[String, DtType], procedures: util.
     }
   }
 
-  private def evalPath(path: Node): String = {
+  private def evalPath(path: Node): Option[String] = {
     val segs = path.getBranches("segment")
-    segs.foldLeft("") {
-      (acc, seg) => {
+    val p = segs.foldLeft(Some("")) {
+      (acc: Option[String], seg: Node) => {
+        if (acc.isEmpty) return acc
+        val a = acc.get
         val name = seg.getValues("name").head
-        val prefix = if (acc.isEmpty) name else acc + "." + name
-
-        prefix
+        val prefix: String = if (a.isEmpty) name else a + "." + name
+        val indexes = seg.getBranches.getOrElse("index", List())
+        if (indexes.isEmpty) Some(prefix)
+        else {
+          var chs: Seq[String] = children(prefix)
+          for (index <- indexes) {
+            val field: Option[String] = index.getValues.get("field").map(_.head)
+            val filter: Option[DtType] = evalExpr(index.getBranches("filter").head)
+            chs = if (field.isDefined)
+              chs.filter(ch => Option(scope.get(prefix + "." + ch + "." + field.get)) == filter)
+            else filter match {
+              case Some(Num(num)) => {
+                val n = num.toInt
+                if (chs.indices.contains(n)) Seq(chs(n)) else Seq()
+              }
+              case _ => Seq()
+            }
+            if (chs.isEmpty) return None
+          }
+          Some(prefix + "." + chs(0))
+        }
       }
     }
+    p
   }
 
 }
