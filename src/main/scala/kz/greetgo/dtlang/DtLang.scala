@@ -37,6 +37,14 @@ object DtLang {
       )
     )
 
+    tokenCategory("comment",
+      sequence(
+        chunk("{"),
+        zeroOrMore( anyExceptOf("}") ),
+        chunk("}")
+      )
+    )
+
     tokenCategory("number",
       sequence(
         optional(chunk("-")),
@@ -133,7 +141,7 @@ object DtLang {
       sequence(
         token("["),
         optional(sequence(
-          capture("field", token("name")),
+          branch("field", token("name")), // TODO capture token anywhere
           token(":")
         )),
         branch("filter", expr),
@@ -158,6 +166,7 @@ object DtLang {
 
     val call = rule("call").cachable {
       sequence(
+        optional(capture("comment", token("comment"))),
         token("("),
         zeroOrMore(
           branch("expr", expr),
@@ -170,8 +179,8 @@ object DtLang {
 
     val atom = rule("atom") {
       choice(
-        capture("num", token("number")),
-        capture("str", token("string")),
+        token("string"),
+        token("number"),
         sequence(
           branch("path", path),
           branch("call", optional(call))

@@ -1,5 +1,13 @@
  > remove:
 group (
+  group <<<(
+    assign (x, 3)
+  )>>>
+)
+
+
+ > remove:
+group (
   group (
     assign <<<(x, 3)>>>
   )
@@ -8,17 +16,13 @@ group (
 
  > create:
 group (
-  group (
-    empty <<<()>>>
-  )
+  empty <<<()>>>
 )
 
 
  > invalidate:
-group (
-  group <<<(
-    empty ()
-  )>>>
-)
+group <<<(
+  empty ()
+)>>>
 
 

@@ -1,133 +1,133 @@
  > create:
 atom:2
 <<<seq (
-  let (x, 5+1*2)
+  let {asd fgh 123 } (x, 5+1*2)
 )>>>
 
 
  > create:
 call:3 cachable
 seq <<<(
-  let (x, 5+1*2)
+  let {asd fgh 123 } (x, 5+1*2)
 )>>>
 
 
  > create:
 expr:4 cachable
 seq (
-  <<<let (x, 5+1*2)>>>
+  <<<let {asd fgh 123 } (x, 5+1*2)>>>
 )
 
 
  > create:
 atom:5
 seq (
-  <<<let (x, 5+1*2)>>>
+  <<<let {asd fgh 123 } (x, 5+1*2)>>>
 )
 
 
  > create:
 call:6 cachable
 seq (
-  let <<<(x, 5+1*2)>>>
+  let <<<{asd fgh 123 } (x, 5+1*2)>>>
 )
 
 
  > create:
 expr:7 cachable
 seq (
-  let (<<<x>>>, 5+1*2)
+  let {asd fgh 123 } (<<<x>>>, 5+1*2)
 )
 
 
  > create:
 atom:8
 seq (
-  let (<<<x>>>, 5+1*2)
+  let {asd fgh 123 } (<<<x>>>, 5+1*2)
 )
 
 
  > create:
 path:9 cachable
 seq (
-  let (<<<x>>>, 5+1*2)
+  let {asd fgh 123 } (<<<x>>>, 5+1*2)
 )
 
 
  > create:
 segment:10
 seq (
-  let (<<<x>>>, 5+1*2)
+  let {asd fgh 123 } (<<<x>>>, 5+1*2)
 )
 
 
  > create:
 expr:11 cachable
 seq (
-  let (x, <<<5+1*2>>>)
+  let {asd fgh 123 } (x, <<<5+1*2>>>)
 )
 
 
  > create:
 +:12
 seq (
-  let (x, 5<<<+>>>1*2)
+  let {asd fgh 123 } (x, 5<<<+>>>1*2)
 )
 
 
  > create:
 atom:13
 seq (
-  let (x, <<<5>>>+1*2)
+  let {asd fgh 123 } (x, <<<5>>>+1*2)
 )
 
 
  > create:
 *:14
 seq (
-  let (x, 5+1<<<*>>>2)
+  let {asd fgh 123 } (x, 5+1<<<*>>>2)
 )
 
 
  > create:
 atom:15
 seq (
-  let (x, 5+<<<1>>>*2)
+  let {asd fgh 123 } (x, 5+<<<1>>>*2)
 )
 
 
  > create:
 atom:16
 seq (
-  let (x, 5+1*<<<2>>>)
+  let {asd fgh 123 } (x, 5+1*<<<2>>>)
 )
 
 
  > create:
 path:17 cachable
 seq (
-  <<<let>>> (x, 5+1*2)
+  <<<let>>> {asd fgh 123 } (x, 5+1*2)
 )
 
 
  > create:
 segment:18
 seq (
-  <<<let>>> (x, 5+1*2)
+  <<<let>>> {asd fgh 123 } (x, 5+1*2)
 )
 
 
  > create:
 path:19 cachable
 <<<seq>>> (
-  let (x, 5+1*2)
+  let {asd fgh 123 } (x, 5+1*2)
 )
 
 
  > create:
 segment:20
 <<<seq>>> (
-  let (x, 5+1*2)
+  let {asd fgh 123 } (x, 5+1*2)
 )
 
 
@@ -138,6 +138,7 @@ expr 1 {
       expr: expr 4 cachable >> 3 {
         result: atom 5 >> 4 {
           call: call 6 cachable >> 5 {
+            comment: {asd fgh 123 }
             expr: expr 7 cachable >> 6 {
               result: atom 8 >> 7 {
                 path: path 9 cachable >> 8 {

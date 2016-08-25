@@ -1,150 +1,153 @@
  > remove:
 segment:13
 group (
-  group (
-    empty (<<<)>>>
-  )
+  empty ()
 )
 
 
  > remove:
 path:12 cachable
 group (
-  group (
-    empty (<<<)>>>
-  )
+  empty ()
 )
 
 
  > remove:
 atom:11
 group (
-  group (
-    empty (<<<)>>>
-  )
+  empty ()
 )
 
 
  > remove:
 expr:10 cachable
 group (
-  group (
-    empty (<<<)>>>
-  )
+  empty ()
 )
 
 
  > remove:
 atom:15
 group (
-  group (
-    empty ()
-  <<<)>>>
+  empty ()
 )
 
 
  > remove:
 expr:14 cachable
 group (
-  group (
-    empty ()
-  <<<)>>>
+  empty ()
 )
 
 
  > remove:
 call:9 cachable
 group (
-  group (
-    empty <<<()>>>
-  )
+  empty ()
 )
 
 
  > remove:
 segment:17
 group (
-  group (
-    <<<empty>>> ()
-  )
-)
+  empty ()
+<<<)>>>
 
 
  > remove:
 path:16 cachable
 group (
-  group (
-    <<<empty>>> ()
-  )
-)
+  empty ()
+<<<)>>>
 
 
  > remove:
 atom:8
 group (
-  group (
-    <<<empty ()>>>
-  )
-)
+  empty ()
+<<<)
 
 
  > remove:
 expr:7 cachable
 group (
-  group (
-    <<<empty ()>>>
-  )
+  empty ()
+<<<)
+
+
+ > remove:
+call:6 cachable
+group (
+  empty <<<()>>>
+)
+
+
+ > remove:
+segment:19
+group (
+  <<<empty>>> ()
+)
+
+
+ > remove:
+path:18 cachable
+group (
+  <<<empty>>> ()
+)
+
+
+ > remove:
+atom:5
+group (
+  <<<empty ()>>>
+)
+
+
+ > remove:
+expr:4 cachable
+group (
+  <<<empty ()>>>
 )
 
 
  > create:
 expr:22 cachable
 group (
-  group (
-    <<<empty ()>>>
-  )
+  <<<empty ()>>>
 )
 
 
  > create:
 atom:23
 group (
-  group (
-    <<<empty ()>>>
-  )
+  <<<empty ()>>>
 )
 
 
  > create:
 call:24 cachable
 group (
-  group (
-    empty <<<()>>>
-  )
+  empty <<<()>>>
 )
 
 
  > create:
 path:25 cachable
 group (
-  group (
-    <<<empty>>> ()
-  )
+  <<<empty>>> ()
 )
 
 
  > create:
 segment:26
 group (
-  group (
-    <<<empty>>> ()
-  )
+  <<<empty>>> ()
 )
 
 
  > merge:
-call 6 cachable >> 5 {
-  expr: expr 22 cachable >> 6 {
+call 3 cachable >> 2 {
+  expr: expr 22 cachable >> 3 {
     result: atom 23 >> 22 {
       call: call 24 cachable >> 23
       path: path 25 cachable >> 23 {

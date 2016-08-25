@@ -1,4 +1,13 @@
  > remove:
+Node 6. Fragment:
+group (
+  group <<<(
+    assign (x, 3)
+  )>>>
+)
+
+
+ > remove:
 Node 9. Fragment:
 group (
   group (
@@ -8,20 +17,16 @@ group (
 
 
  > invalidate:
-Node 6. Fragment:
-group (
-  group <<<(
-    empty ()
-  )>>>
-)
+Node 3. Fragment:
+group <<<(
+  empty ()
+)>>>
 
 
  > create:
 Node 24. Fragment:
 group (
-  group (
-    empty <<<()>>>
-  )
+  empty <<<()>>>
 )
 
 
